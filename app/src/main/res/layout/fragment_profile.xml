@@ -1,0 +1,123 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white">
+
+    <RelativeLayout
+        android:id="@+id/toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="80dp"
+        android:background="@drawable/bg_top_cornor_primary">
+
+
+        <androidx.appcompat.widget.AppCompatTextView
+            style="@style/TextAppearance.AppCompat.Medium"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:fontFamily="@font/poppins_semibold"
+            android:text="@string/title_profile"
+            android:textColor="@color/white" />
+
+    </RelativeLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/toolbar"
+        android:orientation="vertical"
+        android:padding="16dp">
+
+        <androidx.appcompat.widget.AppCompatTextView
+            style="@style/TextAppearance.AppCompat.Small"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="24dp"
+            android:fontFamily="@font/poppins_regular"
+            android:text="@string/email"
+            android:textColor="@color/black" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/tvEmail"
+            style="@style/TextAppearance.AppCompat.Caption"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="8dp"
+            android:layout_marginTop="8dp"
+            android:fontFamily="@font/poppins_light"
+            android:text="abc@gmail.com"
+            android:textColor="@color/black" />
+
+
+        <androidx.appcompat.widget.AppCompatTextView
+            style="@style/TextAppearance.AppCompat.Small"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:fontFamily="@font/poppins_regular"
+            android:text="@string/name"
+            android:textColor="@color/black" />
+
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/tvName"
+            style="@style/TextAppearance.AppCompat.Caption"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="8dp"
+            android:layout_marginTop="8dp"
+            android:fontFamily="@font/poppins_light"
+            android:text="Muhammad Furqan"
+            android:textColor="@color/black" />
+
+
+        <androidx.appcompat.widget.AppCompatTextView
+            style="@style/TextAppearance.AppCompat.Small"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:fontFamily="@font/poppins_regular"
+            android:text="@string/account_type"
+            android:textColor="@color/black" />
+
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/tvAccountType"
+            style="@style/TextAppearance.AppCompat.Caption"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="8dp"
+            android:layout_marginTop="8dp"
+            android:fontFamily="@font/poppins_light"
+            android:text="Organization"
+            android:textColor="@color/black" />
+
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/logoutButton"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="32dp"
+            android:text="@string/logout"
+            android:textColor="@color/white"
+            app:cornerRadius="8dp" />
+
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/deleteAccountButton"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:backgroundTint="@color/white"
+            android:text="@string/delete_account"
+            android:textColor="@color/primary"
+            app:cornerRadius="8dp"
+            app:strokeColor="@color/primary"
+            app:strokeWidth="1dp" />
+
+
+    </LinearLayout>
+
+</RelativeLayout>

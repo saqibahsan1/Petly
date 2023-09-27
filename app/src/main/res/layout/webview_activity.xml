@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@id/toolbar"
+        android:layout_width="fill_parent"
+        android:layout_height="80.0dip"
+        android:background="@drawable/bg_top_cornor_primary"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@id/buttonBack"
+            android:layout_width="40.0dip"
+            android:layout_height="40.0dip"
+            android:layout_centerVertical="true"
+            android:layout_marginHorizontal="16.0dip"
+            android:layout_marginLeft="16.0dip"
+            android:layout_marginRight="16.0dip"
+            android:padding="4.0dip"
+            android:src="@drawable/ic_back"
+            android:tint="@color/white"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@id/productName"
+            style="@style/TextAppearance.AppCompat.Medium"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:fontFamily="@font/poppins_regular"
+            android:textColor="@color/white"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.43"
+            app:layout_constraintStart_toEndOf="@id/buttonBack"
+            app:layout_constraintTop_toTopOf="parent" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <me.ibrahimsn.lib.CirclesLoadingView
+        android:id="@id/laoder"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:elevation="4.0dip"
+        android:visibility="gone"
+        app:animDelay="150"
+        app:animDistance="16.0dip"
+        app:animDuration="500"
+        app:animInterpolator="accelerateDecelerate"
+        app:circleMargin="8.0dip"
+        app:circleRadius="8.0dip"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <WebView
+        android:id="@id/webview"
+        android:layout_width="fill_parent"
+        android:layout_height="0.0dip"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/toolbar" />
+</androidx.constraintlayout.widget.ConstraintLayout>

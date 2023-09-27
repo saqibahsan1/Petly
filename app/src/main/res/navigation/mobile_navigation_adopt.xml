@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/mobile_navigation"
+    app:startDestination="@+id/navigation_match">
+
+    <fragment
+        android:id="@+id/navigation_match"
+        android:name="com.lcpetlylgmg.petly.adopt.match.ui.MatchFragment"
+        android:label="@string/title_post"
+        tools:layout="@layout/fragment_match" />
+
+    <fragment
+        android:id="@+id/navigation_inbox"
+        android:name="com.lcpetlylgmg.petly.organization.inbox.InboxFragment"
+        android:label="@string/title_inbox"
+        tools:layout="@layout/fragment_inbox" />
+
+    <fragment
+        android:id="@+id/navigation_request"
+        android:name="com.lcpetlylgmg.petly.common.requests.ui.RequestFragment"
+        android:label="@string/title_request"
+        tools:layout="@layout/fragment_request" />
+
+
+    <fragment
+        android:id="@+id/navigation_profile"
+        android:name="com.lcpetlylgmg.petly.common.profile.ProfileFragment"
+        android:label="@string/title_profile"
+        tools:layout="@layout/fragment_profile" />
+
+
+</navigation>

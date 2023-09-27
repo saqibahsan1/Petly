@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools">
+    <uses-permission android:name="com.google.android.gms.permission.AD_ID" tools:node="remove"/>
+
+    <uses-feature
+        android:name="android.hardware.camera"
+        android:required="false" />
+
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.CAMERA" />
+    <uses-permission android:name="android.permission.READ_MEDIA_IMAGES" />
+    <application
+        android:name=".MyApplication"
+        android:allowBackup="true"
+        android:dataExtractionRules="@xml/data_extraction_rules"
+        android:fullBackupContent="@xml/backup_rules"
+        android:icon="@mipmap/ic_launcher"
+        android:label="@string/app_name"
+        android:roundIcon="@mipmap/ic_launcher_round"
+        android:supportsRtl="true"
+        android:theme="@style/Theme.Petly"
+        tools:targetApi="31">
+        <activity
+            android:name=".admin.ui.AdminLoginActivity"
+            android:exported="false" />
+        <activity
+            android:name=".admin.ui.AdminActivity"
+            android:exported="false" />
+        <activity
+            android:name=".common.chat.ui.ChatActivity"
+            android:exported="false" />
+        <activity
+            android:name=".common.requests.ui.RequestDetailsActivity"
+            android:exported="false" />
+        <activity
+            android:name=".adopt.match.ui.MatchDetailsActivity"
+            android:exported="false" />
+        <activity
+            android:name=".adopt.match.ui.SetCharacteristicActivity"
+            android:exported="false" />
+        <activity
+            android:name=".adopt.AdoptHomeActivity"
+            android:exported="false" />
+        <activity
+            android:name=".organization.post.ui.NewPostActivity"
+            android:exported="false" />
+        <activity
+            android:name=".organization.post.ui.UpdatePostActivity"
+            android:exported="false" />
+        <activity
+            android:name=".organization.OrganizationHomeActivity"
+            android:exported="false"
+            android:label="@string/title_activity_organization_home" />
+        <activity
+            android:name=".user.ui.activities.RegisterActivity"
+            android:exported="false" />
+        <activity
+            android:name=".user.ui.activities.LoginActivity"
+            android:exported="false" />
+        <activity
+            android:name=".user.ui.activities.MainActivity"
+            android:exported="false" />
+        <activity
+            android:name=".SplashScreen"
+            android:exported="true">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+
+        <service
+            android:name=".MyFirebaseMessagingService"
+            android:directBootAware="true"
+            android:exported="true"
+            android:permission="com.google.android.c2dm.permission.SEND">
+            <intent-filter>
+                <action android:name="com.google.firebase.MESSAGING_EVENT" />
+                <action android:name="com.google.android.c2dm.intent.RECEIVE" />
+            </intent-filter>
+        </service>
+    </application>
+
+</manifest>

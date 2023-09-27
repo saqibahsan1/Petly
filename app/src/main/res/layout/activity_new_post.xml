@@ -1,0 +1,634 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white">
+
+    <RelativeLayout
+        android:id="@+id/toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="80dp"
+        android:background="@drawable/bg_top_cornor_primary">
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/buttonBack"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:layout_centerVertical="true"
+            android:layout_marginHorizontal="16dp"
+            android:padding="4dp"
+            android:src="@drawable/ic_back"
+            android:tint="@color/white" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/accountType"
+            style="@style/TextAppearance.AppCompat.Medium"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:fontFamily="@font/poppins_regular"
+            android:text="@string/post_dog"
+            android:textColor="@color/white" />
+
+    </RelativeLayout>
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/toolbar"
+        android:orientation="vertical"
+        android:padding="16dp">
+
+        <androidx.core.widget.NestedScrollView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+
+                <de.hdodenhof.circleimageview.CircleImageView
+                    android:id="@+id/image"
+                    android:layout_width="150dp"
+                    android:layout_height="150dp"
+                    android:layout_gravity="center"
+                    android:layout_marginTop="12dp"
+                    android:layout_marginBottom="16dp"
+                    android:src="@drawable/ic_add_image"
+                    app:civ_border_color="@color/white"
+                    app:civ_border_width="2dp" />
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    style="@style/TextAppearance.AppCompat.Small"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="24dp"
+                    android:fontFamily="@font/poppins_regular"
+                    android:text="@string/name"
+                    android:textColor="@color/black" />
+
+                <androidx.appcompat.widget.AppCompatEditText
+                    android:id="@+id/editTextName"
+                    style="@style/TextAppearance.AppCompat.Small"
+                    android:layout_width="match_parent"
+                    android:layout_height="40dp"
+                    android:layout_marginTop="8dp"
+                    android:background="@drawable/bg_edittext"
+                    android:fontFamily="@font/poppins_regular"
+                    android:hint="@string/enter_name"
+                    android:paddingHorizontal="16dp"
+                    android:textColor="@color/black" />
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    style="@style/TextAppearance.AppCompat.Small"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="24dp"
+                    android:fontFamily="@font/poppins_regular"
+                    android:text="@string/breed"
+                    android:textColor="@color/black" />
+
+                <androidx.appcompat.widget.AppCompatEditText
+                    android:id="@+id/editTextBreed"
+                    style="@style/TextAppearance.AppCompat.Small"
+                    android:layout_width="match_parent"
+                    android:layout_height="40dp"
+                    android:layout_marginTop="8dp"
+                    android:background="@drawable/bg_edittext"
+                    android:fontFamily="@font/poppins_regular"
+                    android:hint="@string/enter_breed"
+                    android:paddingHorizontal="16dp"
+                    android:textColor="@color/black" />
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    style="@style/TextAppearance.AppCompat.Small"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="24dp"
+                    android:fontFamily="@font/poppins_regular"
+                    android:text="@string/age"
+                    android:textColor="@color/black" />
+
+                <androidx.appcompat.widget.AppCompatEditText
+                    android:id="@+id/editTextAge"
+                    style="@style/TextAppearance.AppCompat.Small"
+                    android:layout_width="match_parent"
+                    android:layout_height="40dp"
+                    android:layout_marginTop="8dp"
+                    android:background="@drawable/bg_edittext"
+                    android:fontFamily="@font/poppins_regular"
+                    android:hint="@string/enter_age"
+                    android:paddingHorizontal="16dp"
+                    android:textColor="@color/black" />
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    style="@style/TextAppearance.AppCompat.Small"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="32dp"
+                    android:fontFamily="@font/poppins_regular"
+                    android:text="@string/experience_with_human"
+                    android:textColor="@color/black" />
+
+                <RadioGroup
+                    android:id="@+id/humanRadioButton"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="8dp"
+                    android:layout_marginLeft="8dp"
+                    android:layout_marginTop="8dp"
+                    android:layout_marginEnd="8dp"
+                    android:layout_marginRight="8dp"
+                    android:gravity="center_horizontal"
+                    android:orientation="horizontal"
+                    android:weightSum="1">
+
+
+                    <RadioButton
+                        android:id="@+id/humanYes"
+                        style="@style/TextAppearance.AppCompat.Caption"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight=".5"
+                        android:background="@drawable/radio_selector"
+                        android:button="@android:color/transparent"
+                        android:checked="true"
+                        android:fontFamily="@font/poppins_semibold"
+                        android:gravity="center"
+                        android:text="@string/yes"
+                        android:textColor="@color/radio_text_selector" />
+
+                    <RadioButton
+                        android:id="@+id/humanNo"
+                        style="@style/TextAppearance.AppCompat.Caption"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight=".5"
+                        android:background="@drawable/radio_selector"
+                        android:button="@android:color/transparent"
+                        android:fontFamily="@font/poppins_semibold"
+                        android:gravity="center"
+                        android:text="@string/no"
+                        android:textColor="@color/radio_text_selector" />
+
+                </RadioGroup>
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    style="@style/TextAppearance.AppCompat.Small"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="16dp"
+                    android:fontFamily="@font/poppins_regular"
+                    android:text="@string/dog_gender"
+                    android:textColor="@color/black" />
+
+                <RadioGroup
+                    android:id="@+id/dogGenderRadioButton"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="8dp"
+                    android:layout_marginLeft="8dp"
+                    android:layout_marginTop="8dp"
+                    android:layout_marginEnd="8dp"
+                    android:layout_marginRight="8dp"
+                    android:gravity="center_horizontal"
+                    android:orientation="horizontal"
+                    android:weightSum="1">
+
+
+                    <RadioButton
+                        android:id="@+id/feminineButton"
+                        style="@style/TextAppearance.AppCompat.Caption"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight=".5"
+                        android:background="@drawable/radio_selector"
+                        android:button="@android:color/transparent"
+                        android:checked="true"
+                        android:fontFamily="@font/poppins_semibold"
+                        android:gravity="center"
+                        android:text="@string/feminine"
+                        android:textColor="@color/radio_text_selector" />
+
+                    <RadioButton
+                        android:id="@+id/masculineButton"
+                        style="@style/TextAppearance.AppCompat.Caption"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight=".5"
+                        android:background="@drawable/radio_selector"
+                        android:button="@android:color/transparent"
+                        android:fontFamily="@font/poppins_semibold"
+                        android:gravity="center"
+                        android:text="@string/masculine"
+                        android:textColor="@color/radio_text_selector" />
+
+                </RadioGroup>
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    style="@style/TextAppearance.AppCompat.Small"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="16dp"
+                    android:fontFamily="@font/poppins_regular"
+                    android:text="@string/compatible_with_cats"
+                    android:textColor="@color/black" />
+
+                <RadioGroup
+                    android:id="@+id/catRadioButton"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="8dp"
+                    android:layout_marginLeft="8dp"
+                    android:layout_marginTop="8dp"
+                    android:layout_marginEnd="8dp"
+                    android:layout_marginRight="8dp"
+                    android:gravity="center_horizontal"
+                    android:orientation="horizontal"
+                    android:weightSum="1">
+
+
+                    <RadioButton
+                        android:id="@+id/catYes"
+                        style="@style/TextAppearance.AppCompat.Caption"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight=".5"
+                        android:background="@drawable/radio_selector"
+                        android:button="@android:color/transparent"
+                        android:checked="true"
+                        android:fontFamily="@font/poppins_semibold"
+                        android:gravity="center"
+                        android:text="@string/yes"
+                        android:textColor="@color/radio_text_selector" />
+
+                    <RadioButton
+                        android:id="@+id/catNo"
+                        style="@style/TextAppearance.AppCompat.Caption"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight=".5"
+                        android:background="@drawable/radio_selector"
+                        android:button="@android:color/transparent"
+                        android:fontFamily="@font/poppins_semibold"
+                        android:gravity="center"
+                        android:text="@string/no"
+                        android:textColor="@color/radio_text_selector" />
+
+                </RadioGroup>
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    style="@style/TextAppearance.AppCompat.Small"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="16dp"
+                    android:fontFamily="@font/poppins_regular"
+                    android:text="@string/compatible_with_children"
+                    android:textColor="@color/black" />
+
+                <RadioGroup
+                    android:id="@+id/childrenRadioButton"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="8dp"
+                    android:layout_marginLeft="8dp"
+                    android:layout_marginTop="8dp"
+                    android:layout_marginEnd="8dp"
+                    android:layout_marginRight="8dp"
+                    android:gravity="center_horizontal"
+                    android:orientation="horizontal"
+                    android:weightSum="1">
+
+
+                    <RadioButton
+                        android:id="@+id/childrenYes"
+                        style="@style/TextAppearance.AppCompat.Caption"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight=".5"
+                        android:background="@drawable/radio_selector"
+                        android:button="@android:color/transparent"
+                        android:checked="true"
+                        android:fontFamily="@font/poppins_semibold"
+                        android:gravity="center"
+                        android:text="@string/yes"
+                        android:textColor="@color/radio_text_selector" />
+
+                    <RadioButton
+                        android:id="@+id/childrenNo"
+                        style="@style/TextAppearance.AppCompat.Caption"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight=".5"
+                        android:background="@drawable/radio_selector"
+                        android:button="@android:color/transparent"
+                        android:fontFamily="@font/poppins_semibold"
+                        android:gravity="center"
+                        android:text="@string/no"
+                        android:textColor="@color/radio_text_selector" />
+
+                </RadioGroup>
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    style="@style/TextAppearance.AppCompat.Small"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="16dp"
+                    android:fontFamily="@font/poppins_regular"
+                    android:text="@string/dog_size"
+                    android:textColor="@color/black" />
+
+                <RadioGroup
+                    android:id="@+id/dogSizeRadioButton"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="8dp"
+                    android:layout_marginLeft="8dp"
+                    android:layout_marginTop="8dp"
+                    android:layout_marginEnd="8dp"
+                    android:layout_marginRight="8dp"
+                    android:gravity="center_horizontal"
+                    android:orientation="horizontal"
+                    android:weightSum="3">
+
+
+                    <RadioButton
+                        android:id="@+id/smallButton"
+                        style="@style/TextAppearance.AppCompat.Caption"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:background="@drawable/radio_selector"
+                        android:button="@android:color/transparent"
+                        android:checked="true"
+                        android:fontFamily="@font/poppins_semibold"
+                        android:gravity="center"
+                        android:text="@string/small"
+                        android:textColor="@color/radio_text_selector" />
+
+                    <RadioButton
+                        android:id="@+id/middleButton"
+                        style="@style/TextAppearance.AppCompat.Caption"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:background="@drawable/radio_selector"
+                        android:button="@android:color/transparent"
+                        android:fontFamily="@font/poppins_semibold"
+                        android:gravity="center"
+                        android:text="@string/middle"
+                        android:textColor="@color/radio_text_selector" />
+
+                    <RadioButton
+                        android:id="@+id/largeButton"
+                        style="@style/TextAppearance.AppCompat.Caption"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:background="@drawable/radio_selector"
+                        android:button="@android:color/transparent"
+                        android:fontFamily="@font/poppins_semibold"
+                        android:gravity="center"
+                        android:text="@string/large"
+                        android:textColor="@color/radio_text_selector" />
+
+                </RadioGroup>
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    style="@style/TextAppearance.AppCompat.Small"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="16dp"
+                    android:fontFamily="@font/poppins_regular"
+                    android:text="@string/handicap"
+                    android:textColor="@color/black" />
+
+                <RadioGroup
+                    android:id="@+id/handicapRadioButton"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="8dp"
+                    android:layout_marginLeft="8dp"
+                    android:layout_marginTop="8dp"
+                    android:layout_marginEnd="8dp"
+                    android:layout_marginRight="8dp"
+                    android:gravity="center_horizontal"
+                    android:orientation="horizontal"
+                    android:weightSum="1">
+
+
+                    <RadioButton
+                        android:id="@+id/handicapYes"
+                        style="@style/TextAppearance.AppCompat.Caption"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight=".5"
+                        android:background="@drawable/radio_selector"
+                        android:button="@android:color/transparent"
+                        android:checked="true"
+                        android:fontFamily="@font/poppins_semibold"
+                        android:gravity="center"
+                        android:text="@string/yes"
+                        android:textColor="@color/radio_text_selector" />
+
+                    <RadioButton
+                        android:id="@+id/handicapNo"
+                        style="@style/TextAppearance.AppCompat.Caption"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight=".5"
+                        android:background="@drawable/radio_selector"
+                        android:button="@android:color/transparent"
+                        android:fontFamily="@font/poppins_semibold"
+                        android:gravity="center"
+                        android:text="@string/no"
+                        android:textColor="@color/radio_text_selector" />
+
+                </RadioGroup>
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    style="@style/TextAppearance.AppCompat.Small"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="16dp"
+                    android:fontFamily="@font/poppins_regular"
+                    android:text="@string/age_range"
+                    android:textColor="@color/black" />
+
+                <RadioGroup
+                    android:id="@+id/ageRangeRadioButton"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="8dp"
+                    android:layout_marginLeft="8dp"
+                    android:layout_marginTop="8dp"
+                    android:layout_marginEnd="8dp"
+                    android:layout_marginRight="8dp"
+                    android:gravity="center_horizontal"
+                    android:orientation="horizontal"
+                    android:weightSum="4">
+
+
+                    <RadioButton
+                        android:id="@+id/puppyButton"
+                        style="@style/TextAppearance.AppCompat.Caption"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:background="@drawable/radio_selector"
+                        android:button="@android:color/transparent"
+                        android:checked="true"
+                        android:fontFamily="@font/poppins_semibold"
+                        android:gravity="center"
+                        android:text="@string/age_range_puppy"
+                        android:textColor="@color/radio_text_selector" />
+
+                    <RadioButton
+                        android:id="@+id/juniorButton"
+                        style="@style/TextAppearance.AppCompat.Caption"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:background="@drawable/radio_selector"
+                        android:button="@android:color/transparent"
+                        android:checked="true"
+                        android:fontFamily="@font/poppins_semibold"
+                        android:gravity="center"
+                        android:text="@string/age_range_junior"
+                        android:textColor="@color/radio_text_selector" />
+
+                    <RadioButton
+                        android:id="@+id/adultButton"
+                        style="@style/TextAppearance.AppCompat.Caption"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:background="@drawable/radio_selector"
+                        android:button="@android:color/transparent"
+                        android:fontFamily="@font/poppins_semibold"
+                        android:gravity="center"
+                        android:text="@string/age_range_adult"
+                        android:textColor="@color/radio_text_selector" />
+
+                    <RadioButton
+                        android:id="@+id/seniorButton"
+                        style="@style/TextAppearance.AppCompat.Caption"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:background="@drawable/radio_selector"
+                        android:button="@android:color/transparent"
+                        android:fontFamily="@font/poppins_semibold"
+                        android:gravity="center"
+                        android:text="@string/age_range_senior"
+                        android:textColor="@color/radio_text_selector" />
+
+                </RadioGroup>
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    style="@style/TextAppearance.AppCompat.Small"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="16dp"
+                    android:fontFamily="@font/poppins_regular"
+                    android:text="@string/country"
+                    android:textColor="@color/black" />
+
+                <androidx.appcompat.widget.AppCompatSpinner
+                    android:id="@+id/spinnerCountry"
+                    android:layout_width="match_parent"
+                    android:layout_height="40dp"
+                    android:layout_marginTop="8dp"
+                    android:background="@color/white" />
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    style="@style/TextAppearance.AppCompat.Small"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="16dp"
+                    android:fontFamily="@font/poppins_regular"
+                    android:text="@string/state"
+                    android:textColor="@color/black" />
+
+                <com.anurag.multiselectionspinner.MultiSpinner
+                    android:id="@+id/stateSpinner"
+                    android:layout_width="match_parent"
+                    android:layout_height="40dp" />
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    style="@style/TextAppearance.AppCompat.Small"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="16dp"
+                    android:fontFamily="@font/poppins_regular"
+                    android:text="@string/dog_city"
+                    android:textColor="@color/black" />
+
+
+                <androidx.appcompat.widget.AppCompatEditText
+                    android:id="@+id/editTextDogCity"
+                    style="@style/TextAppearance.AppCompat.Small"
+                    android:layout_width="match_parent"
+                    android:layout_height="40dp"
+                    android:layout_marginTop="8dp"
+                    android:background="@drawable/bg_edittext"
+                    android:fontFamily="@font/poppins_regular"
+                    android:hint="@string/enter_age"
+                    android:paddingHorizontal="16dp"
+                    android:textColor="@color/black" />
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    style="@style/TextAppearance.AppCompat.Small"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="16dp"
+                    android:fontFamily="@font/poppins_regular"
+                    android:text="@string/dog_about"
+                    android:textColor="@color/black" />
+
+
+                <androidx.appcompat.widget.AppCompatEditText
+                    android:id="@+id/editTextAbout"
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="8dp"
+                    android:background="@drawable/bg_edittext"
+                    android:gravity="top|start"
+                    android:inputType="textEmailAddress|textMultiLine"
+                    android:lines="20"
+                    android:minLines="5"
+                    android:scrollbars="vertical"
+                    android:scrollHorizontally="false" />
+
+
+                <com.google.android.material.button.MaterialButton
+                    android:id="@+id/buttonPost"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="16dp"
+                    android:text="@string/post_dog"
+                    android:textColor="@color/white"
+                    app:cornerRadius="8dp" />
+
+            </LinearLayout>
+        </androidx.core.widget.NestedScrollView>
+    </LinearLayout>
+
+    <me.ibrahimsn.lib.CirclesLoadingView
+        android:id="@+id/laoder"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerInParent="true"
+        android:visibility="gone"
+        app:animDelay="150"
+        app:animDistance="16dp"
+        app:animDuration="500"
+        app:animInterpolator="accelerateDecelerate"
+        app:circleMargin="8dp"
+        app:circleRadius="8dp" />
+
+</RelativeLayout>

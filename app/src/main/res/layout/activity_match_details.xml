@@ -1,0 +1,336 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white">
+
+    <RelativeLayout
+        android:id="@+id/toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="80dp"
+        android:background="@drawable/bg_top_cornor_primary">
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/buttonBack"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:layout_centerVertical="true"
+            android:layout_marginHorizontal="16dp"
+            android:padding="4dp"
+            android:src="@drawable/ic_back"
+            android:tint="@color/white" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/accountType"
+            style="@style/TextAppearance.AppCompat.Medium"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:fontFamily="@font/poppins_regular"
+            android:text="@string/title_match"
+            android:textColor="@color/white" />
+
+    </RelativeLayout>
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/toolbar"
+        android:orientation="vertical"
+        android:padding="16dp">
+
+        <androidx.core.widget.NestedScrollView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+
+                <de.hdodenhof.circleimageview.CircleImageView
+                    android:id="@+id/image"
+                    android:layout_width="150dp"
+                    android:layout_height="150dp"
+                    android:layout_gravity="center"
+                    android:layout_marginTop="12dp"
+                    android:layout_marginBottom="16dp"
+                    android:src="@drawable/ic_launcher_background"
+                    app:civ_border_color="@color/white"
+                    app:civ_border_width="2dp" />
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    style="@style/TextAppearance.AppCompat.Small"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="16dp"
+                    android:fontFamily="@font/poppins_regular"
+                    android:text="@string/name"
+                    android:textColor="@color/black" />
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/name"
+                    style="@style/TextAppearance.AppCompat.Caption"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="8dp"
+                    android:layout_marginTop="8dp"
+                    android:fontFamily="@font/poppins_regular"
+                    android:textColor="@color/black" />
+
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    style="@style/TextAppearance.AppCompat.Small"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="16dp"
+                    android:fontFamily="@font/poppins_regular"
+                    android:text="@string/breed"
+                    android:textColor="@color/black" />
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/breed"
+                    style="@style/TextAppearance.AppCompat.Caption"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="8dp"
+                    android:layout_marginTop="8dp"
+                    android:fontFamily="@font/poppins_regular"
+                    android:textColor="@color/black" />
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    style="@style/TextAppearance.AppCompat.Small"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="16dp"
+                    android:fontFamily="@font/poppins_regular"
+                    android:text="@string/age"
+                    android:textColor="@color/black" />
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/age"
+                    style="@style/TextAppearance.AppCompat.Caption"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="8dp"
+                    android:layout_marginTop="8dp"
+                    android:fontFamily="@font/poppins_regular"
+                    android:textColor="@color/black" />
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    style="@style/TextAppearance.AppCompat.Small"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="16dp"
+                    android:fontFamily="@font/poppins_regular"
+                    android:text="@string/experience_with_human"
+                    android:textColor="@color/black" />
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/dogExperience"
+                    style="@style/TextAppearance.AppCompat.Caption"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="8dp"
+                    android:layout_marginTop="8dp"
+                    android:fontFamily="@font/poppins_regular"
+                    android:textColor="@color/black" />
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    style="@style/TextAppearance.AppCompat.Small"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="16dp"
+                    android:fontFamily="@font/poppins_regular"
+                    android:text="@string/compatible_with_cats"
+                    android:textColor="@color/black" />
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/catExperience"
+                    style="@style/TextAppearance.AppCompat.Caption"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="8dp"
+                    android:layout_marginTop="8dp"
+                    android:fontFamily="@font/poppins_regular"
+                    android:textColor="@color/black" />
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    style="@style/TextAppearance.AppCompat.Small"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="16dp"
+                    android:fontFamily="@font/poppins_regular"
+                    android:text="@string/compatible_with_children"
+                    android:textColor="@color/black" />
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/childExperience"
+                    style="@style/TextAppearance.AppCompat.Caption"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="8dp"
+                    android:layout_marginTop="8dp"
+                    android:fontFamily="@font/poppins_regular"
+                    android:textColor="@color/black" />
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    style="@style/TextAppearance.AppCompat.Small"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="16dp"
+                    android:fontFamily="@font/poppins_regular"
+                    android:text="@string/dog_gender"
+                    android:textColor="@color/black" />
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/dogGender"
+                    style="@style/TextAppearance.AppCompat.Caption"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="8dp"
+                    android:layout_marginTop="8dp"
+                    android:fontFamily="@font/poppins_regular"
+                    android:textColor="@color/black" />
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    style="@style/TextAppearance.AppCompat.Small"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="16dp"
+                    android:fontFamily="@font/poppins_regular"
+                    android:text="@string/dog_size"
+                    android:textColor="@color/black" />
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/dogSize"
+                    style="@style/TextAppearance.AppCompat.Caption"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="8dp"
+                    android:layout_marginTop="8dp"
+                    android:fontFamily="@font/poppins_regular"
+                    android:textColor="@color/black" />
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    style="@style/TextAppearance.AppCompat.Small"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="16dp"
+                    android:fontFamily="@font/poppins_regular"
+                    android:text="@string/handicap"
+                    android:textColor="@color/black" />
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/handicapDog"
+                    style="@style/TextAppearance.AppCompat.Caption"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="8dp"
+                    android:layout_marginTop="8dp"
+                    android:fontFamily="@font/poppins_regular"
+                    android:textColor="@color/black" />
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    style="@style/TextAppearance.AppCompat.Small"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="16dp"
+                    android:fontFamily="@font/poppins_regular"
+                    android:text="@string/age_range"
+                    android:textColor="@color/black" />
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/ageRange"
+                    style="@style/TextAppearance.AppCompat.Caption"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="8dp"
+                    android:layout_marginTop="8dp"
+                    android:fontFamily="@font/poppins_regular"
+                    android:textColor="@color/black" />
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    style="@style/TextAppearance.AppCompat.Small"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="16dp"
+                    android:fontFamily="@font/poppins_regular"
+                    android:text="@string/state"
+                    android:textColor="@color/black" />
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/dogStates"
+                    style="@style/TextAppearance.AppCompat.Caption"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="8dp"
+                    android:layout_marginTop="8dp"
+                    android:fontFamily="@font/poppins_regular"
+                    android:textColor="@color/black" />
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    style="@style/TextAppearance.AppCompat.Small"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="16dp"
+                    android:fontFamily="@font/poppins_regular"
+                    android:text="@string/country"
+                    android:textColor="@color/black" />
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/dogCountry"
+                    style="@style/TextAppearance.AppCompat.Caption"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="8dp"
+                    android:layout_marginTop="8dp"
+                    android:fontFamily="@font/poppins_regular"
+                    android:textColor="@color/black" />
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    style="@style/TextAppearance.AppCompat.Small"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="16dp"
+                    android:fontFamily="@font/poppins_regular"
+                    android:text="@string/dog_city"
+                    android:textColor="@color/black" />
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/dogCity"
+                    style="@style/TextAppearance.AppCompat.Caption"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="8dp"
+                    android:layout_marginTop="8dp"
+                    android:fontFamily="@font/poppins_regular"
+                    android:textColor="@color/black" />
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    style="@style/TextAppearance.AppCompat.Small"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="16dp"
+                    android:fontFamily="@font/poppins_regular"
+                    android:text="@string/dog_about"
+                    android:textColor="@color/black" />
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/dogAbout"
+                    style="@style/TextAppearance.AppCompat.Caption"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="8dp"
+                    android:layout_marginTop="8dp"
+                    android:fontFamily="@font/poppins_regular"
+                    android:textColor="@color/black" />
+
+
+            </LinearLayout>
+        </androidx.core.widget.NestedScrollView>
+    </LinearLayout>
+</RelativeLayout>

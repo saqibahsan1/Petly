@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <RelativeLayout
+        android:id="@+id/toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="80dp"
+        android:background="@drawable/bg_top_cornor_primary">
+
+        <androidx.appcompat.widget.AppCompatTextView
+            style="@style/TextAppearance.AppCompat.Medium"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:fontFamily="@font/poppins_semibold"
+            android:text="@string/user_list"
+            android:textColor="@color/white" />
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/buttonBack"
+            android:layout_width="40dp"
+            android:layout_marginStart="8dp"
+            android:tint="@color/white"
+            android:layout_height="40dp"
+            android:layout_centerVertical="true"
+            android:padding="4dp"
+            android:src="@drawable/ic_back" />
+
+    </RelativeLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/toolbar"
+        android:orientation="vertical">
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/recyclerViewAdmin"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+            tools:listitem="@layout/item_admin" />
+
+    </LinearLayout>
+
+
+    <me.ibrahimsn.lib.CirclesLoadingView
+        android:id="@+id/laoder"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerInParent="true"
+        android:visibility="gone"
+        app:animDelay="150"
+        app:animDistance="16dp"
+        app:animDuration="500"
+        app:animInterpolator="accelerateDecelerate"
+        app:circleMargin="8dp"
+        app:circleRadius="8dp" />
+
+</RelativeLayout>

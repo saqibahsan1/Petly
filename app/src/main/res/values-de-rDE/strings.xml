@@ -1,0 +1,267 @@
+<resources>
+    <string name="app_name">Petly</string>
+    <string name="select_account_type">Kontotyp auswählen</string>
+    <string name="account_type">Kontotyp</string>
+    <string name="account_type_adopt">Suchender</string>
+    <string name="account_type_organization">Organisation/Verein</string>
+    <string name="account_type_shelter">Tierheim</string>
+    <string name="account_type_agent">Züchter/Vermittler</string>
+    <string name="login_as_admin"><u>Login As Admin</u> </string>
+    <string name="login">Login</string>
+    <string name="logout">Logout</string>
+    <string name="delete_account">Account löschen</string>
+    <string name="register">Registrieren</string>
+    <string name="post_dog">Hund anlegen</string>
+    <string name="email">E-Mail</string>
+    <string name="set_characteristics">Eigenschaften festlegen</string>
+    <string name="name">Name</string>
+    <string name="breed">Rasse</string>
+    <string name="age">Alter</string>
+    <string name="enter_age">Alter eingeben</string>
+    <string name="enter_city">Stadt eingeben</string>
+    <string name="enter_about">Infos über den Hund</string>
+    <string name="enter_breed">Gib die Rasse ein</string>
+    <string name="enter_email">E-Mail eingeben</string>
+    <string name="enter_name">Name eingeben</string>
+    <string name="password">Passwort</string>
+    <string name="password_not_match">Passwort nicht identisch</string>
+    <string name="confirm_password">Passwort bestätigen</string>
+    <string name="enter_confirm_password">Bestätige dein Passwort</string>
+    <string name="enter_password">Passwort eingeben</string>
+    <string name="no_dog_found">Keine passenden Hunde gefunden!</string>
+    <string name="change_character">Wähle andere<font color='#b1cda0'> Kriterien</font></string>
+    <string name="reload">aus oder<font color='#b1cda0'> aktualisiere.</font></string>
+    <string name="no_account">Du hast noch keinen Account?<font color='#b1cda0'> Kostenlos registrieren</font></string>
+    <string name="have_account">Du hast bereits einen Account?<font color='#b1cda0'> Login</font></string>
+    <string name="title_activity_organization_home">OrganizationHomeActivity</string>
+    <string name="title_post">Post</string>
+    <string name="title_request">Liste</string>
+    <string name="title_inbox">Inbox</string>
+    <string name="title_profile">Profil</string>
+    <string name="experience_with_human">Benötigt erfahrenen Menschen</string>
+    <string name="yes">Ja</string>
+    <string name="no">Nein</string>
+    <string name="dog_size">Hundegröße</string>
+    <string name="dog_gender">Geschlecht des Hundes</string>
+    <string name="small">Klein</string>
+    <string name="middle">Mittel</string>
+    <string name="large">Groß</string>
+    <string name="handicap">Hund hat eine Behinderung</string>
+    <string name="age_range">Altersbereich</string>
+    <string name="age_range_puppy">Welpe</string>
+    <string name="age_range_junior">Junghund</string>
+    <string name="age_range_adult">Erwachsen</string>
+    <string name="age_range_senior">Senior</string>
+    <string name="feminine">Weiblich</string>
+    <string name="masculine">Männlich</string>
+    <string name="does_not_matter">Egal</string>
+    <string name="compatible_with_cats">Ist verträglich mit Katzen?</string>
+    <string name="compatible_with_children">Ist verträglich mit Kindern?</string>
+    <string name="country">Ort</string>
+    <string name="state">State</string>
+    <string name="dog_city">Stadt</string>
+    <string name="dog_about">Über den Hund</string>
+    <string name="match_list">Matching Liste</string>
+    <string name="my_request">Liste</string>
+    <string name="no_post_found">Keine Hunde vorhanden</string>
+    <string name="you_have_experience">Du hast Erfahrung mit Hunden?</string>
+    <string name="your_dog_should">Geschlecht?</string>
+    <string name="how_big_dog">Wie groß soll dein Hund sein?</string>
+    <string name="handicap_dog">Darf dein Hund ein Handicap haben?</string>
+    <string name="your_dog_with_cats">Soll verträglich mit Katzen sein?</string>
+    <string name="your_dog_with_children">Soll verträglich mit Kindern sein?</string>
+    <string name="request_message_success">Request Saved Successfully</string>
+    <string name="request_message_cancel">Request Cancel Successfully</string>
+
+    <string name="request_message_success_already">Requested Already</string>
+    <string name="request_message_failed">Request Failed!</string>
+    <string name="post_message_success">Dog posted successfully</string>
+    <string name="post_message_delete">Dog deleted successfully</string>
+    <string name="post_message_failed">Post Failed! Bitte stelle sicher dass du ein Bild und alle Infos ausgefüllt hast</string>
+    <string name="match_characteristics">Matching Kriterien</string>
+    <string name="title_match">Match</string>
+    <string name="cancel">Cancel</string>
+    <string name="write_message">Nachricht schreiben</string>
+    <string name="chat">Chat</string>
+    <string name="update_post">Aktualisieren</string>
+    <string name="delete">Löschen</string>
+    <string name="no_user_found">Kein Account gefunden</string>
+    <string name="user_list">User List</string>
+    <string name="pending">Pending</string>
+    <string name="approved">Approved</string>
+    <string name="type">Type</string>
+    <string name="message_not_approved">Ihr Profil muss noch vom Administrator genehmigt werden. Sie erhalten eine E-Mail, sobald das Profil genehmigt wurde.</string>
+
+
+    <string-array name="states_germany">
+        <item>Baden-Württemberg</item>
+        <item>Bayern</item>
+        <item>Berlin</item>
+        <item>Brandenburg</item>
+        <item>Bremen</item>
+        <item>Hamburg</item>
+        <item>Hessen</item>
+        <item>Mecklenburg-Vorpommern</item>
+        <item>Niedersachsen</item>
+        <item>Nordrhein-Westfalen</item>
+        <item>Rheinland-Pfalz</item>
+        <item>Saarland</item>
+        <item>Sachsen</item>
+        <item>Sachsen-Anhalt</item>
+        <item>Schleswig-Holstein</item>
+        <item>Thüringen</item>
+    </string-array>
+
+    <string-array name="states_europe">
+        <item>Albanien</item>
+        <item>Andorra</item>
+        <item>Belgien</item>
+        <item>Bosnien und Herzegowina</item>
+        <item>Bulgarien</item>
+        <item>Dänemark</item>
+        <item>Estland</item>
+        <item>Finnland</item>
+        <item>Frankreich</item>
+        <item>Griechenland</item>
+        <item>Irland</item>
+        <item>Island</item>
+        <item>Italien</item>
+        <item>Kasachstan</item>
+        <item>Kosovo</item>
+        <item>Kroatien</item>
+        <item>Lettland</item>
+        <item>Liechtenstein</item>
+        <item>Litauen</item>
+        <item>Luxemburg</item>
+        <item>Malta</item>
+        <item>Moldawien</item>
+        <item>Monaco</item>
+        <item>Montenegro</item>
+        <item>Niederlande</item>
+        <item>Nordmazedonien</item>
+        <item>Norwegen</item>
+        <item>Österreich</item>
+        <item>Polen</item>
+        <item>Portugal</item>
+        <item>Rumänien</item>
+        <item>Russland</item>
+        <item>San Marino</item>
+        <item>Schweden</item>
+        <item>Schweiz</item>
+        <item>Serbien</item>
+        <item>Slowakei</item>
+        <item>Slowenien</item>
+        <item>Spanien</item>
+        <item>Tschechien</item>
+        <item>Türkei</item>
+        <item>Ukraine</item>
+        <item>Ungarn</item>
+        <item>Vatikan</item>
+        <item>Vereinigtes Königreich</item>
+        <item>Weißrussland</item>
+    </string-array>
+    <string-array name="states_usa">
+        <item>Alabama</item>
+        <item>Alaska</item>
+        <item>Arizona</item>
+        <item>Arkansas</item>
+        <item>California</item>
+        <item>Colorado</item>
+        <item>Connecticut</item>
+        <item>Delaware</item>
+        <item>Florida</item>
+        <item>Georgia</item>
+        <item>Hawaii</item>
+        <item>Idaho</item>
+        <item>Illinois</item>
+        <item>Indiana</item>
+        <item>Iowa</item>
+        <item>Kansas</item>
+        <item>Kentucky</item>
+        <item>Louisiana</item>
+        <item>Maine</item>
+        <item>Maryland</item>
+        <item>Massachusetts</item>
+        <item>Michigan</item>
+        <item>Minnesota</item>
+        <item>Mississippi</item>
+        <item>Missouri</item>
+        <item>Montana</item>
+        <item>Nebraska</item>
+        <item>Nevada</item>
+        <item>New Hampshire</item>
+        <item>New Jersey</item>
+        <item>New Mexico</item>
+        <item>New York</item>
+        <item>North Carolina</item>
+        <item>North Dakota</item>
+        <item>Ohio</item>
+        <item>Oklahoma</item>
+        <item>Oregon</item>
+        <item>Pennsylvania</item>
+        <item>Rhode Island</item>
+        <item>South Carolina</item>
+        <item>South Dakota</item>
+        <item>Tennessee</item>
+        <item>Texas</item>
+        <item>Utah</item>
+        <item>Vermont</item>
+        <item>Virginia</item>
+        <item>Washington</item>
+        <item>West Virginia</item>
+        <item>Wisconsin</item>
+        <item>Wyoming</item>
+    </string-array>
+
+    <string-array name="states_morroko">
+        <item>Tangier-Tetouan-Al Hoceima</item>
+        <item>Oriental</item>
+        <item>Fes-Meknes</item>
+        <item>Rabat-Sale-Kenitra</item>
+        <item>Beni Mellal-Khenifra</item>
+        <item>Casablanca-Settat</item>
+        <item>Marrakech-Safi</item>
+        <item>Draa-Tafilalet</item>
+        <item>Souss-Massa</item>
+        <item>Guelmim-Oued Noun</item>
+        <item>Laayoune-Sakia El Hamra</item>
+        <item>Dakhla-Oued Ed-Dahab</item>
+    </string-array>
+
+    <string-array name="states_mexico">
+        <item>Aguascalientes</item>
+        <item>Baja California</item>
+        <item>Baja California Sur</item>
+        <item>Campeche</item>
+        <item>Chiapas</item>
+        <item>Chihuahua</item>
+        <item>Coahuila</item>
+        <item>Colima</item>
+        <item>Durango</item>
+        <item>Guanajuato</item>
+        <item>Guerrero</item>
+        <item>Hidalgo</item>
+        <item>Jalisco</item>
+        <item>Mexico City (Ciudad de México)</item>
+        <item>State of Mexico (Estado de México)</item>
+        <item>Michoacán</item>
+        <item>Morelos</item>
+        <item>Nayarit</item>
+        <item>Nuevo León</item>
+        <item>Oaxaca</item>
+        <item>Puebla</item>
+        <item>Querétaro</item>
+        <item>Quintana Roo</item>
+        <item>San Luis Potosí</item>
+        <item>Sinaloa</item>
+        <item>Sonora</item>
+        <item>Tabasco</item>
+        <item>Tamaulipas</item>
+        <item>Tlaxcala</item>
+        <item>Veracruz</item>
+        <item>Yucatán</item>
+        <item>Zacatecas</item>
+    </string-array>
+
+
+</resources>

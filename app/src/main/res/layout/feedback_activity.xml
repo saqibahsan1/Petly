@@ -1,0 +1,137 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent">
+
+    <androidx.appcompat.widget.AppCompatImageView
+        android:id="@id/buttonBack"
+        android:layout_width="40.0dip"
+        android:layout_height="40.0dip"
+        android:layout_centerVertical="true"
+        android:layout_marginHorizontal="16.0dip"
+        android:layout_marginLeft="16.0dip"
+        android:layout_marginTop="15.0dip"
+        android:layout_marginRight="16.0dip"
+        android:padding="4.0dip"
+        android:src="@drawable/ic_back"
+        android:tint="@color/primary"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@id/deleteTitle"
+        android:layout_width="0.0dip"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="20.0dip"
+        android:layout_marginLeft="20.0dip"
+        android:layout_marginTop="16.0dip"
+        android:layout_marginRight="20.0dip"
+        android:text="@string/deletingADog"
+        android:textColor="@color/primary"
+        android:textSize="22.0sp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/buttonBack" />
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@id/deleteDescription"
+        android:layout_width="0.0dip"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="20.0dip"
+        android:layout_marginLeft="20.0dip"
+        android:layout_marginTop="16.0dip"
+        android:layout_marginRight="20.0dip"
+        android:text="@string/letUsKnowReason"
+        android:textColor="@color/primary"
+        android:textSize="22.0sp"
+        android:textStyle="normal"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/deleteTitle" />
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="20.0dip"
+        android:layout_marginLeft="20.0dip"
+        android:layout_marginTop="16.0sp"
+        android:layout_marginRight="20.0dip"
+        android:background="@drawable/bg_account_type"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/deleteDescription">
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@id/selectReason"
+            android:layout_width="0.0dip"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="15.0dip"
+            android:layout_marginTop="15.0dip"
+            android:text="@string/selectReasons"
+            android:textAlignment="viewStart"
+            android:textColor="@color/black"
+            android:textSize="16.0sp"
+            android:textStyle="normal"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <RadioGroup
+            android:id="@id/RGroup"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="10.0dip"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/selectReason">
+
+            <RadioButton
+                android:id="@id/Abdominal"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:buttonTint="@color/primary"
+                android:text="@string/adopted" />
+
+            <RadioButton
+                android:id="@id/Arm"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:buttonTint="@color/primary"
+                android:text="@string/sickness" />
+
+            <RadioButton
+                android:id="@id/Back"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:buttonTint="@color/primary"
+                android:text="@string/died" />
+
+            <RadioButton
+                android:id="@id/Chest"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:buttonTint="@color/primary"
+                android:text="@string/otherReason" />
+        </RadioGroup>
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@id/deleteButton"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="16.0dip"
+            android:layout_marginLeft="16.0dip"
+            android:layout_marginTop="10.0dip"
+            android:layout_marginRight="16.0dip"
+            android:layout_marginBottom="20.0dip"
+            android:background="@drawable/bg_account"
+            android:backgroundTint="@color/primary"
+            android:text="@string/delete"
+            android:textColor="@color/white"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/RGroup" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</androidx.constraintlayout.widget.ConstraintLayout>
