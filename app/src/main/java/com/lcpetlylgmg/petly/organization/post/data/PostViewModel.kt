@@ -6,6 +6,7 @@ import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import com.google.firebase.firestore.FirebaseFirestore
 import com.google.firebase.storage.FirebaseStorage
+import com.lcpetlylgmg.petly.organization.data.Feedback
 import com.lcpetlylgmg.petly.utils.GlobalKeys
 
 class PostViewModel(private val postRepository: PostRepository) : ViewModel() {
@@ -18,6 +19,9 @@ class PostViewModel(private val postRepository: PostRepository) : ViewModel() {
 
     fun savePost(post: Post, onComplete: (Boolean, String?) -> Unit) {
         postRepository.savePost(post, onComplete)
+    }
+    fun sendFeedBack(feedback: Feedback, onComplete: (Boolean, String?) -> Unit) {
+        postRepository.sendFeedBack(feedback, onComplete)
     }
 
     fun updatePost(post: Post, onComplete: (Boolean, String?) -> Unit) {

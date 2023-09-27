@@ -96,7 +96,7 @@ class RequestFragment : Fragment(), RequestAdapter.OnItemClickListener {
                         .getCurrentUser()?.accountType == GlobalKeys.ACCOUNT_TYPE_ADOPT || PreferenceHelper.getPref(
                         requireContext()
                     ).getCurrentUser()?.accountType == GlobalKeys.ACCOUNT_TYPE_AGENT
-                ){
+                ) {
                     requestViewModel.getRequestsByUserID(it, GlobalKeys.REQUEST_TYPE_FROM)
                 } else {
                     requestViewModel.getRequestsByUserID(it, GlobalKeys.REQUEST_TYPE_TO)

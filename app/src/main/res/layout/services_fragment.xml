@@ -1,0 +1,258 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.core.widget.NestedScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/toolbar"
+            android:layout_width="fill_parent"
+            android:layout_height="90.0dip"
+            android:background="@drawable/bg_top_cornor"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <androidx.appcompat.widget.AppCompatImageView
+                android:id="@+id/buttonBack"
+                android:layout_width="40.0dip"
+                android:layout_height="40.0dip"
+                android:layout_centerVertical="true"
+                android:layout_marginHorizontal="16.0dip"
+                android:layout_marginLeft="16.0dip"
+                android:layout_marginRight="16.0dip"
+                android:padding="4.0dip"
+                android:src="@drawable/ic_back"
+                android:tint="@color/white"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/productName"
+                style="@style/TextAppearance.AppCompat.Medium"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerInParent="true"
+                android:fontFamily="@font/poppins_regular"
+                android:text="@string/services"
+                android:textColor="@color/white"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.43"
+                app:layout_constraintStart_toEndOf="@+id/buttonBack"
+                app:layout_constraintTop_toTopOf="parent" />
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/dogImg"
+            android:layout_width="fill_parent"
+            android:layout_height="120.0dip"
+            android:layout_marginTop="-10.0dip"
+            android:src="@drawable/dog_pic"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/toolbar" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/knowledgeText"
+            android:layout_width="0.0dip"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="20.0dip"
+            android:layout_marginTop="20.0dip"
+            android:fontFamily="@font/poppins_semibold"
+            android:text="@string/knowledgeBase"
+            android:textAlignment="viewStart"
+            android:textSize="20.0sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/dogImg" />
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/blog"
+            android:layout_width="105.0dip"
+            android:layout_height="95.0dip"
+            android:layout_marginStart="10.0dip"
+            android:layout_marginTop="10.0dip"
+            android:background="@drawable/bg_account"
+            android:src="@drawable/services_heart"
+            app:layout_constraintStart_toStartOf="@+id/knowledgeText"
+            app:layout_constraintTop_toBottomOf="@+id/knowledgeText" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/blogText"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="4.0dip"
+            android:text="@string/blog"
+            android:textAlignment="viewStart"
+            android:textSize="16.0sp"
+            app:layout_constraintEnd_toEndOf="@+id/blog"
+            app:layout_constraintStart_toStartOf="@+id/blog"
+            app:layout_constraintTop_toBottomOf="@+id/blog" />
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/petlyButton"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="20.0dip"
+            android:layout_marginLeft="20.0dip"
+            android:layout_marginTop="16.0dip"
+            android:layout_marginRight="20.0dip"
+            android:background="@drawable/bg_account"
+            android:text="@string/petlyCommunity"
+            android:textAllCaps="false"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/blogText" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/insuranceText"
+            android:layout_width="0.0dip"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="20.0dip"
+            android:layout_marginTop="20.0dip"
+            android:fontFamily="@font/poppins_semibold"
+            android:text="@string/insurance"
+            android:textAlignment="viewStart"
+            android:textSize="20.0sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/petlyButton" />
+
+        <androidx.appcompat.widget.LinearLayoutCompat
+            android:id="@+id/mainButtonsLayout"
+            android:layout_width="0.0dip"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            app:layout_constraintEnd_toEndOf="@+id/petlyButton"
+            app:layout_constraintStart_toStartOf="@+id/insuranceText"
+            app:layout_constraintTop_toBottomOf="@+id/insuranceText">
+
+            <androidx.appcompat.widget.LinearLayoutCompat
+                android:id="@+id/liabilityButton"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1.0"
+                android:orientation="vertical">
+
+                <androidx.appcompat.widget.AppCompatImageView
+                    android:layout_width="105.0dip"
+                    android:layout_height="95.0dip"
+                    android:layout_marginTop="10.0dip"
+                    android:background="@drawable/bg_account"
+                    android:src="@drawable/liabilty_icon"
+                    app:layout_constraintStart_toStartOf="@+id/knowledgeText"
+                    app:layout_constraintTop_toBottomOf="@+id/knowledgeText" />
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/liabilityText"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="4.0dip"
+                    android:gravity="center"
+                    android:text="@string/liabilityInsurance"
+                    android:textSize="16.0sp"
+                    app:layout_constraintEnd_toEndOf="@+id/blog"
+                    app:layout_constraintStart_toStartOf="@+id/blog"
+                    app:layout_constraintTop_toBottomOf="@+id/blog" />
+            </androidx.appcompat.widget.LinearLayoutCompat>
+
+            <androidx.appcompat.widget.LinearLayoutCompat
+                android:id="@+id/surgicalButton"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1.0"
+                android:orientation="vertical">
+
+                <androidx.appcompat.widget.AppCompatImageView
+                    android:layout_width="105.0dip"
+                    android:layout_height="95.0dip"
+                    android:layout_marginStart="5.0dip"
+                    android:layout_marginTop="10.0dip"
+                    android:background="@drawable/bg_account"
+                    android:src="@drawable/op_icon"
+                    app:layout_constraintStart_toStartOf="@+id/knowledgeText"
+                    app:layout_constraintTop_toBottomOf="@+id/knowledgeText" />
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/surgicalText"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="4.0dip"
+                    android:gravity="center"
+                    android:layout_gravity="center"
+                    android:text="@string/surgicalProtection"
+                    android:textSize="16.0sp"
+                    app:layout_constraintEnd_toEndOf="@+id/blog"
+                    app:layout_constraintStart_toStartOf="@+id/blog"
+                    app:layout_constraintTop_toBottomOf="@+id/blog" />
+            </androidx.appcompat.widget.LinearLayoutCompat>
+
+            <androidx.appcompat.widget.LinearLayoutCompat
+                android:id="@+id/healthButton"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1.0"
+                android:orientation="vertical">
+
+                <androidx.appcompat.widget.AppCompatImageView
+                    android:layout_width="105.0dip"
+                    android:layout_height="95.0dip"
+                    android:layout_marginStart="5.0dip"
+                    android:layout_marginTop="10.0dip"
+                    android:background="@drawable/bg_account"
+                    android:src="@drawable/health_dog"
+                    app:layout_constraintStart_toStartOf="@+id/knowledgeText"
+                    app:layout_constraintTop_toBottomOf="@+id/knowledgeText" />
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/healthText"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="4.0dip"
+                    android:gravity="center"
+                    android:text="@string/healthInsurance"
+                    android:textSize="16.0sp"
+                    app:layout_constraintEnd_toEndOf="@+id/blog"
+                    app:layout_constraintStart_toStartOf="@+id/blog"
+                    app:layout_constraintTop_toBottomOf="@+id/blog" />
+            </androidx.appcompat.widget.LinearLayoutCompat>
+        </androidx.appcompat.widget.LinearLayoutCompat>
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/shopText"
+            android:layout_width="0.0dip"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="20.0dip"
+            android:layout_marginTop="20.0dip"
+            android:fontFamily="@font/poppins_semibold"
+            android:text="@string/shop"
+            android:textAlignment="viewStart"
+            android:textSize="20.0sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/mainButtonsLayout" />
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/shopButton"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="20.0dip"
+            android:layout_marginLeft="20.0dip"
+            android:layout_marginTop="16.0dip"
+            android:layout_marginRight="20.0dip"
+            android:layout_marginBottom="20.0dip"
+            android:background="@drawable/bg_account"
+            android:text="@string/toPetlyShop"
+            android:textAllCaps="false"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/shopText" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</androidx.core.widget.NestedScrollView>

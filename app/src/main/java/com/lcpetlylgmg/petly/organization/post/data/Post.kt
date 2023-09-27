@@ -5,6 +5,9 @@ import android.os.Parcelable
 
 data class Post(
     var age: String? = null,
+    var category: String? = null,
+    var link: String? = null,
+    var productName: String? = null,
     var ageRange: String? = null,
     var breed: String? = null,
     var city: String? = null,
@@ -42,11 +45,18 @@ data class Post(
         parcel.readString(),
         parcel.readString(),
         parcel.readString(),
+        parcel.readString(),
+        parcel.readString(),
+        parcel.readString(),
         parcel.readLong(),
         parcel.createStringArrayList()
     )
 
     override fun writeToParcel(parcel: Parcel, flags: Int) {
+        parcel.writeString(age)
+        parcel.writeString(category)
+        parcel.writeString(link)
+        parcel.writeString(productName)
         parcel.writeString(age)
         parcel.writeString(ageRange)
         parcel.writeString(breed)

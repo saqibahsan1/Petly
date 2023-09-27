@@ -5,7 +5,7 @@
     android:layout_height="fill_parent">
 
     <androidx.appcompat.widget.AppCompatImageView
-        android:id="@id/buttonBack"
+        android:id="@+id/buttonBack"
         android:layout_width="40.0dip"
         android:layout_height="40.0dip"
         android:layout_centerVertical="true"
@@ -20,7 +20,7 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <androidx.appcompat.widget.AppCompatTextView
-        android:id="@id/deleteTitle"
+        android:id="@+id/deleteTitle"
         android:layout_width="0.0dip"
         android:layout_height="wrap_content"
         android:layout_marginHorizontal="20.0dip"
@@ -33,10 +33,10 @@
         android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/buttonBack" />
+        app:layout_constraintTop_toBottomOf="@+id/buttonBack" />
 
     <androidx.appcompat.widget.AppCompatTextView
-        android:id="@id/deleteDescription"
+        android:id="@+id/deleteDescription"
         android:layout_width="0.0dip"
         android:layout_height="wrap_content"
         android:layout_marginHorizontal="20.0dip"
@@ -49,7 +49,25 @@
         android:textStyle="normal"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/deleteTitle" />
+        app:layout_constraintTop_toBottomOf="@+id/deleteTitle" />
+
+
+    <me.ibrahimsn.lib.CirclesLoadingView
+        android:id="@+id/laoder"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        android:elevation="5dp"
+        android:visibility="gone"
+        app:animDelay="150"
+        app:animDistance="16dp"
+        app:animDuration="500"
+        app:animInterpolator="accelerateDecelerate"
+        app:circleMargin="8dp"
+        app:circleRadius="8dp" />
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="fill_parent"
@@ -61,10 +79,10 @@
         android:background="@drawable/bg_account_type"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/deleteDescription">
+        app:layout_constraintTop_toBottomOf="@+id/deleteDescription">
 
         <androidx.appcompat.widget.AppCompatTextView
-            android:id="@id/selectReason"
+            android:id="@+id/selectReason"
             android:layout_width="0.0dip"
             android:layout_height="wrap_content"
             android:layout_marginStart="15.0dip"
@@ -80,36 +98,36 @@
             app:layout_constraintTop_toTopOf="parent" />
 
         <RadioGroup
-            android:id="@id/RGroup"
+            android:id="@+id/RGroup"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginStart="10.0dip"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/selectReason">
+            app:layout_constraintTop_toBottomOf="@+id/selectReason">
 
             <RadioButton
-                android:id="@id/Abdominal"
+                android:id="@+id/Abdominal"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:buttonTint="@color/primary"
                 android:text="@string/adopted" />
 
             <RadioButton
-                android:id="@id/Arm"
+                android:id="@+id/Arm"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:buttonTint="@color/primary"
                 android:text="@string/sickness" />
 
             <RadioButton
-                android:id="@id/Back"
+                android:id="@+id/Back"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:buttonTint="@color/primary"
                 android:text="@string/died" />
 
             <RadioButton
-                android:id="@id/Chest"
+                android:id="@+id/Chest"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:buttonTint="@color/primary"
@@ -117,7 +135,7 @@
         </RadioGroup>
 
         <androidx.appcompat.widget.AppCompatButton
-            android:id="@id/deleteButton"
+            android:id="@+id/deleteButton"
             android:layout_width="fill_parent"
             android:layout_height="wrap_content"
             android:layout_marginHorizontal="16.0dip"
@@ -132,6 +150,6 @@
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/RGroup" />
+            app:layout_constraintTop_toBottomOf="@+id/RGroup" />
     </androidx.constraintlayout.widget.ConstraintLayout>
 </androidx.constraintlayout.widget.ConstraintLayout>

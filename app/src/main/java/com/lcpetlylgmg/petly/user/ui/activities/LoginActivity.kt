@@ -1,13 +1,17 @@
 package com.lcpetlylgmg.petly.user.ui.activities
 
+import android.app.Dialog
 import android.content.Context
 import android.content.Intent
 import android.os.Bundle
 import android.util.Log
 import android.view.View
+import android.view.Window
 import android.widget.Toast
 import androidx.appcompat.app.AlertDialog
 import androidx.appcompat.app.AppCompatActivity
+import androidx.appcompat.widget.AppCompatButton
+import androidx.appcompat.widget.AppCompatEditText
 import androidx.lifecycle.ViewModelProvider
 import com.google.android.gms.tasks.OnCompleteListener
 import com.google.firebase.auth.FirebaseAuth
@@ -21,6 +25,7 @@ import com.lcpetlylgmg.petly.user.data.UserRepository
 import com.lcpetlylgmg.petly.user.data.UserViewModel
 import com.lcpetlylgmg.petly.user.data.UserViewModelFactory
 import com.lcpetlylgmg.petly.utils.GlobalKeys
+
 
 class LoginActivity : AppCompatActivity() {
     private lateinit var helper: PreferenceHelper
@@ -43,11 +48,12 @@ class LoginActivity : AppCompatActivity() {
         setContentView(binding.root)
 
         binding.apply {
+            forgetPassword.setOnClickListener {
+                showCustomDialog()
+            }
 
 
             buttonLogin.setOnClickListener {
-
-
                 val email = editTextEmail.text.toString()
                 val password = editTextPassword.text.toString()
 
@@ -177,7 +183,43 @@ class LoginActivity : AppCompatActivity() {
         })
     }
 
-    fun showAlertDialog(context: Context, message: String, title: String) {
+    private fun showCustomDialog() {
+        val dialog = Dialog(this)
+        dialog.requestWindowFeature(Window.FEATURE_NO_TITLE)
+        dialog.setCancelable(false)
+        dialog.setContentView(R.layout.custom_forget_password_dialog)
+        val body = dialog.findViewById(R.id.passwordEditText) as AppCompatEditText
+        val width = (resources.displayMetrics.widthPixels * 0.90).toInt()
+        val height = (resources.displayMetrics.heightPixels * 0.40).toInt()
+        dialog.window?.setLayout(width,height)
+        dialog.window?.setBackgroundDrawableResource(android.R.color.transparent)
+        val yesBtn = dialog.findViewById(R.id.updateButton) as AppCompatButton
+        yesBtn.setOnClickListener {
+            binding.laoder.visibility = View.VISIBLE
+            if (!body.text.isNullOrEmpty()) {
+                FirebaseAuth.getInstance().sendPasswordResetEmail(body.text.toString())
+                    .addOnCompleteListener { task ->
+                        binding.laoder.visibility = View.GONE
+                        if (task.isSuccessful) {
+                            showAlertDialog(this, this.getString(R.string.emailMessage), "Email Sent")
+                        } else
+                            showAlertDialog(this, task.exception?.message.toString(), "Error")
+
+                    }
+            }
+        }
+
+        val noBtn = dialog.findViewById(R.id.cancel_button) as AppCompatButton
+        noBtn.setOnClickListener {
+            dialog.dismiss()
+        }
+
+        dialog.show()
+
+    }
+
+
+    private fun showAlertDialog(context: Context, message: String, title: String) {
         AlertDialog.Builder(context).setTitle(title).setMessage(message)
             .setPositiveButton("OK") { dialog, _ ->
                 dialog.dismiss()

@@ -29,6 +29,7 @@ import com.lcpetlylgmg.petly.R
 import com.lcpetlylgmg.petly.adopt.AdoptHomeActivity
 import com.lcpetlylgmg.petly.databinding.ActivityUpdatePostBinding
 import com.lcpetlylgmg.petly.organization.OrganizationHomeActivity
+import com.lcpetlylgmg.petly.organization.feedback.FeedbackActivity
 import com.lcpetlylgmg.petly.organization.post.data.Post
 import com.lcpetlylgmg.petly.organization.post.data.PostRepository
 import com.lcpetlylgmg.petly.organization.post.data.PostViewModel
@@ -152,14 +153,10 @@ class UpdatePostActivity : AppCompatActivity(), AdapterView.OnItemSelectedListen
 
 
                 deleteButton.setOnClickListener {
-                    postViewModel.deletePost(postId) {
-                        if (it) {
-                            showAlertDialogFinish(
-                                this@UpdatePostActivity,
-                                getString(R.string.post_message_delete), it
-                            )
-                        }
-                    }
+                    val intent = Intent(this@UpdatePostActivity, FeedbackActivity::class.java)
+                    intent.putExtra(GlobalKeys.POST_DELETE, post)
+                    startActivity(intent)
+                    finish()
                 }
             }
 
@@ -336,8 +333,8 @@ class UpdatePostActivity : AppCompatActivity(), AdapterView.OnItemSelectedListen
                 postedBy,
                 postedByName,
                 about,
-                postedDate,
-                selectedStates
+                postedDate = postedDate,
+                state = selectedStates
             )
             postViewModel.updatePost(post) { success, errorMessage ->
                 if (success) {

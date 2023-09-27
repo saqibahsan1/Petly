@@ -23,14 +23,18 @@ class GlobalKeys {
         const val ACTION_UPDATE = "action_update"
 
         const val THREAD_ID = " threadId"
-        const val FROM = "from"
+        const val POST_DELETE = "postDelete"
+        const val WEB_DATA = "webData"
         const val FROM_REQUEST = "from_request"
         const val FROM_INBOX = "from_inbox"
 
-        const val USER_TABLE = "user_table"
-        const val REQUEST_TABLE = "request_table"
-        const val POST_TABLE = "post_table"
-        const val CHAT_TABLE = "chat_table"
+        const val USER_TABLE = "user_table_stage"
+        const val REQUEST_TABLE = "request_table_stage"
+        const val POST_TABLE = "post_table_stage"
+        const val CHAT_TABLE = "chat_table_stage"
+        const val FEEDBACK_TABLE = "feedback_table_stage"
+        const val PRODUCT_TABLE = "product_table_stage"
+        const val SERVICES_TABLE = "services_link_table"
 
         const val POST = "post"
         const val REQUEST = "request"

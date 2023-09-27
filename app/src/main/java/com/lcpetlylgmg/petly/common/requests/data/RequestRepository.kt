@@ -1,6 +1,7 @@
 package com.lcpetlylgmg.petly.common.requests.data
 
 import com.google.firebase.firestore.FirebaseFirestore
+import com.lcpetlylgmg.petly.common.service.data.ServicesUrls
 import com.lcpetlylgmg.petly.utils.GlobalKeys
 
 class RequestRepository {
@@ -38,6 +39,19 @@ class RequestRepository {
             }
     }
 
+    fun getServices(onComplete: (ServicesUrls?, String?) -> Unit) {
+        val collectionRef = firestore.collection(GlobalKeys.SERVICES_TABLE)
+        collectionRef.get()
+            .addOnSuccessListener { documents ->
+                for (doc in documents) {
+                    val servicesUrls = doc.toObject(ServicesUrls::class.java)
+                    onComplete(servicesUrls, null)
+                }
+            }
+            .addOnFailureListener {
+                onComplete(null, it.message.toString())
+            }
+    }
 
 
     fun cancelRequest(requestId: String, onComplete: (Boolean, String?) -> Unit) {

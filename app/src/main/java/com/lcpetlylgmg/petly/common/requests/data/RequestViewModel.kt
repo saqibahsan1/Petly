@@ -6,6 +6,7 @@ import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import com.google.firebase.firestore.FirebaseFirestore
+import com.lcpetlylgmg.petly.common.service.data.ServicesUrls
 import com.lcpetlylgmg.petly.user.data.User
 import com.lcpetlylgmg.petly.utils.GlobalKeys
 
@@ -13,6 +14,12 @@ class RequestViewModel(private val requestRepository: RequestRepository) : ViewM
 
     private val _userRequestLiveData = MutableLiveData<List<Request>>()
     val userRequestLiveData: LiveData<List<Request>> = _userRequestLiveData
+
+    val servicesLinks: LiveData<ServicesUrls>
+        get() = _servicesLinks
+    private val _servicesLinks: MutableLiveData<ServicesUrls> by lazy {
+        MutableLiveData()
+    }
 
     private val _userRequestLiveDataMessage = MutableLiveData<String>()
     val userRequestLiveDataMessage: LiveData<String> = _userRequestLiveDataMessage
@@ -26,6 +33,11 @@ class RequestViewModel(private val requestRepository: RequestRepository) : ViewM
             } else {
                 _userRequestLiveDataMessage.postValue(errorMessage)
             }
+        }
+    }
+   fun getServiceLinks() {
+        requestRepository.getServices { requests, errorMessage ->
+            _servicesLinks.value = requests
         }
     }
 

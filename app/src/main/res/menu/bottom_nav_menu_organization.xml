@@ -21,4 +21,9 @@
         android:icon="@drawable/ic_profile"
         android:title="@string/title_profile" />
 
+    <item
+        android:id="@+id/navigation_services"
+        android:icon="@drawable/service"
+        android:title="@string/services" />
+
 </menu>

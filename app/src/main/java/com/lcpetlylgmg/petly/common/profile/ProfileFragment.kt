@@ -1,15 +1,23 @@
 package com.lcpetlylgmg.petly.common.profile
 
+import android.app.Dialog
+import android.content.Context
 import android.content.Intent
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.view.Window
 import android.widget.Toast
+import androidx.appcompat.app.AlertDialog
+import androidx.appcompat.widget.AppCompatButton
+import androidx.appcompat.widget.AppCompatEditText
 import androidx.fragment.app.Fragment
 import com.google.firebase.auth.FirebaseAuth
+import com.lcpetlylgmg.petly.R
 import com.lcpetlylgmg.petly.databinding.FragmentProfileBinding
 import com.lcpetlylgmg.petly.prefs.PreferenceHelper
+import com.lcpetlylgmg.petly.user.ui.activities.LoginActivity
 import com.lcpetlylgmg.petly.user.ui.activities.MainActivity
 
 
@@ -50,6 +58,9 @@ class ProfileFragment : Fragment() {
                 requireActivity().finish()
             }
 
+            updatePasswordButton.setOnClickListener {
+                showCustomDialog()
+            }
             deleteAccountButton.setOnClickListener {
                 val user = FirebaseAuth.getInstance().currentUser
 
@@ -74,10 +85,51 @@ class ProfileFragment : Fragment() {
             }
 
         }
-
-
         return root
     }
+
+    private fun showCustomDialog() {
+        val dialog = Dialog(requireContext())
+        dialog.requestWindowFeature(Window.FEATURE_NO_TITLE)
+        dialog.setCancelable(false)
+        dialog.setContentView(R.layout.custom_dialog)
+        val body = dialog.findViewById(R.id.passwordEditText) as AppCompatEditText
+        val width = (resources.displayMetrics.widthPixels * 0.90).toInt()
+        val height = (resources.displayMetrics.heightPixels * 0.40).toInt()
+        dialog.window?.setLayout(width,height)
+        dialog.window?.setBackgroundDrawableResource(android.R.color.transparent)
+        val yesBtn = dialog.findViewById(R.id.updateButton) as AppCompatButton
+        yesBtn.setOnClickListener {
+            if (!body.text.isNullOrEmpty()) {
+                val user = FirebaseAuth.getInstance().currentUser
+                user?.updatePassword(body.text.toString())
+                    ?.addOnCompleteListener { task ->
+                        if (task.isSuccessful) {
+                            showAlertDialog(requireContext(), this.getString(R.string.passwordUpdatedSuccessfully), "")
+                        } else
+                            showAlertDialog(requireContext(), task.exception?.message.toString(), "Error")
+
+                    }
+            }
+        }
+
+        val noBtn = dialog.findViewById(R.id.cancel_button) as AppCompatButton
+        noBtn.setOnClickListener {
+            dialog.dismiss()
+        }
+
+        dialog.show()
+
+    }
+
+    private fun showAlertDialog(context: Context, message: String, title: String) {
+        AlertDialog.Builder(context).setTitle(title).setMessage(message)
+            .setPositiveButton("OK") { dialog, _ ->
+                dialog.dismiss()
+            }.show()
+
+    }
+
 
     override fun onDestroyView() {
         super.onDestroyView()

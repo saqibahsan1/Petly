@@ -1,11 +1,12 @@
 package com.lcpetlylgmg.petly.user.data
 
-import android.content.ContentValues.TAG
-import android.util.Log
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.auth.FirebaseAuthException
 import com.google.firebase.firestore.FirebaseFirestore
+import com.google.firebase.firestore.Query
+import com.lcpetlylgmg.petly.organization.post.data.Post
 import com.lcpetlylgmg.petly.utils.GlobalKeys
+import kotlinx.coroutines.tasks.await
 
 class UserRepository {
 
@@ -70,6 +71,20 @@ class UserRepository {
                     onComplete(null, task.exception?.message ?: "Error fetching user data.")
                 }
             }
+    }
+
+    suspend fun getProducts(onComplete: (List<Post>?, String?) -> Unit) {
+        val postList = mutableListOf<Post>()
+        val collectionRef = firestore.collection(GlobalKeys.PRODUCT_TABLE)
+        val query: Query = collectionRef
+        val querySnapshot = query.get().await()
+        for (document in querySnapshot.documents) {
+            val post = document.toObject(Post::class.java)
+            if (post != null) {
+                postList.add(post)
+            }
+        }
+        onComplete(postList, "Data Found")
     }
 
     fun saveFCMTokenForUser(

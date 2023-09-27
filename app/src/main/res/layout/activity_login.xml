@@ -1,24 +1,24 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    tools:context=".user.ui.activities.LoginActivity">
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent">
 
     <RelativeLayout
-        android:id="@+id/toolbar"
-        android:layout_width="match_parent"
-        android:layout_height="80dp"
+        android:id="@id/toolbar"
+        android:layout_width="fill_parent"
+        android:layout_height="80.0dip"
         android:background="@drawable/bg_top_cornor_primary">
 
         <androidx.appcompat.widget.AppCompatImageView
-            android:id="@+id/buttonBack"
-            android:layout_width="40dp"
-            android:layout_height="40dp"
+            android:id="@id/buttonBack"
+            android:layout_width="40.0dip"
+            android:layout_height="40.0dip"
             android:layout_centerVertical="true"
-            android:layout_marginHorizontal="16dp"
-            android:padding="4dp"
+            android:layout_marginHorizontal="16.0dip"
+            android:layout_marginLeft="16.0dip"
+            android:layout_marginRight="16.0dip"
+            android:padding="4.0dip"
             android:src="@drawable/ic_back"
             android:tint="@color/white" />
 
@@ -30,106 +30,108 @@
             android:fontFamily="@font/poppins_semibold"
             android:text="@string/login"
             android:textColor="@color/white" />
-
     </RelativeLayout>
 
     <LinearLayout
-        android:layout_width="match_parent"
+        android:layout_width="fill_parent"
         android:layout_height="wrap_content"
-        android:layout_below="@+id/toolbar"
+        android:layout_below="@id/toolbar"
         android:orientation="vertical"
-        android:padding="16dp">
+        android:padding="16.0dip">
 
         <androidx.appcompat.widget.AppCompatImageView
-            android:layout_width="250dp"
-            android:layout_height="150dp"
+            android:layout_width="250.0dip"
+            android:layout_height="150.0dip"
             android:layout_gravity="center"
-            android:layout_marginTop="12dp"
+            android:layout_marginTop="12.0dip"
             android:src="@drawable/ic_logo" />
-
 
         <androidx.appcompat.widget.AppCompatTextView
             style="@style/TextAppearance.AppCompat.Small"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_centerInParent="true"
-            android:layout_marginTop="24dp"
+            android:layout_marginTop="24.0dip"
             android:fontFamily="@font/poppins_regular"
             android:text="@string/email"
             android:textColor="@color/black" />
 
         <androidx.appcompat.widget.AppCompatEditText
-            android:id="@+id/editTextEmail"
+            android:id="@id/editTextEmail"
             style="@style/TextAppearance.AppCompat.Small"
-            android:layout_width="match_parent"
-            android:layout_height="40dp"
-            android:layout_marginTop="8dp"
+            android:layout_width="fill_parent"
+            android:layout_height="40.0dip"
+            android:layout_marginTop="8.0dip"
             android:background="@drawable/bg_edittext"
             android:fontFamily="@font/poppins_light"
             android:hint="@string/enter_email"
             android:inputType="textEmailAddress"
-            android:paddingStart="16dp"
+            android:paddingStart="16.0dip"
             android:textColor="@color/black" />
-
 
         <androidx.appcompat.widget.AppCompatTextView
             style="@style/TextAppearance.AppCompat.Small"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="16dp"
+            android:layout_marginTop="16.0dip"
             android:fontFamily="@font/poppins_regular"
             android:text="@string/password"
             android:textColor="@color/black" />
 
         <androidx.appcompat.widget.AppCompatEditText
-            android:id="@+id/editTextPassword"
+            android:id="@id/editTextPassword"
             style="@style/TextAppearance.AppCompat.Small"
-            android:layout_width="match_parent"
-            android:layout_height="40dp"
-            android:layout_marginTop="8dp"
+            android:layout_width="fill_parent"
+            android:layout_height="40.0dip"
+            android:layout_marginTop="8.0dip"
             android:background="@drawable/bg_edittext"
             android:fontFamily="@font/poppins_light"
             android:hint="@string/enter_password"
-            android:inputType="textVisiblePassword"
-            android:paddingStart="16dp"
-            android:paddingEnd="16dp"
+            android:inputType="textPassword"
+            android:paddingStart="16.0dip"
+            android:paddingEnd="16.0dip"
             android:textColor="@color/black" />
 
-        <com.google.android.material.button.MaterialButton
-            android:id="@+id/buttonLogin"
-            android:layout_width="match_parent"
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/forgetPassword"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="16dp"
+            android:layout_gravity="end"
+            android:layout_marginTop="10.0dip"
+            android:text="@string/forgotPassword"
+            android:textColor="@color/primary" />
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@id/buttonLogin"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16.0dip"
             android:text="@string/login"
             android:textColor="@color/white"
-            app:cornerRadius="8dp" />
-
+            app:cornerRadius="8.0dip" />
 
         <androidx.appcompat.widget.AppCompatTextView
-            android:id="@+id/registerButton"
+            android:id="@id/registerButton"
             style="@style/TextAppearance.AppCompat.Small"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="center"
-            android:layout_marginTop="24dp"
-            android:layout_marginBottom="16dp"
+            android:layout_marginTop="24.0dip"
+            android:layout_marginBottom="16.0dip"
             android:fontFamily="@font/poppins_regular"
             android:text="@string/no_account" />
-
     </LinearLayout>
 
     <me.ibrahimsn.lib.CirclesLoadingView
-        android:id="@+id/laoder"
+        android:id="@id/laoder"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_centerInParent="true"
         android:visibility="gone"
         app:animDelay="150"
-        app:animDistance="16dp"
+        app:animDistance="16.0dip"
         app:animDuration="500"
         app:animInterpolator="accelerateDecelerate"
-        app:circleMargin="8dp"
-        app:circleRadius="8dp" />
-
-
+        app:circleMargin="8.0dip"
+        app:circleRadius="8.0dip" />
 </RelativeLayout>

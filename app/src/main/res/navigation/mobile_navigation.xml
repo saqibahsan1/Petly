@@ -29,5 +29,11 @@
         android:label="@string/title_inbox"
         tools:layout="@layout/fragment_profile" />
 
+    <fragment
+        android:id="@id/navigation_services"
+        android:name="com.lcpetlylgmg.petly.common.service.ui.ServicesFragment"
+        android:label="@string/services"
+        tools:layout="@layout/services_fragment"/>
+
 
 </navigation>

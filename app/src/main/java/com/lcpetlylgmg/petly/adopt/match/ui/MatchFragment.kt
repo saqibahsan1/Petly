@@ -170,10 +170,8 @@ class MatchFragment : Fragment(), MatchAdapter.OnItemClickListener {
         super.onActivityResult(requestCode, resultCode, data)
 
         if (requestCode == SELECTION_REQUEST_CODE && resultCode == Activity.RESULT_OK) {
-            val selectedModel = data?.getParcelableExtra<Match>("selectedModel")!!
-            if (selectedModel != null) {
-                performSearch(selectedModel, "Egal")
-            }
+            selectedModel = data?.getParcelableExtra<Match>("selectedModel")!!
+            performSearch(selectedModel, "Egal")
         }
     }
 
@@ -198,12 +196,14 @@ class MatchFragment : Fragment(), MatchAdapter.OnItemClickListener {
                         val requestedPostIds = userData.requestedPostIds
                         // Cache the data
                         for (post in postList) {
-                            // Check if the post's postId is not in requestedPostIds and is not already in cachedPostList
-                            if (!requestedPostIds?.contains(post.postId!!)!! && !cachedPostList.any { it.postId == post.postId }) {
+                            if (requestedPostIds != null) {
+                                // Check if the post's postId is not in requestedPostIds and is not already in cachedPostList
+                                if (!requestedPostIds.contains(post.postId!!) && !cachedPostList.any { it.postId == post.postId }) {
+                                    cachedPostList.add(post)
+                                }
+                            } else
                                 cachedPostList.add(post)
-                            }
                         }
-
                         // Populate the RecyclerView
                         initRecyclerView(cachedPostList)
                     } else {
@@ -271,8 +271,28 @@ class MatchFragment : Fragment(), MatchAdapter.OnItemClickListener {
         startActivity(intent)
     }
 
+    private var postCount = 0
+    private var products = 0
+
+    private suspend fun getMarketingProducts(){
+        userViewModel.getProductsData { success, errorMessage1 ->
+            if (success?.size!! > 0) {
+                initRecyclerView(success)
+            } else {
+                binding.laoder.visibility = View.GONE
+                showAlertDialog(
+                    requireContext(),
+                    getString(R.string.request_message_failed) + " " + errorMessage1,
+                    false
+                )
+            }
+        }
+
+    }
+
     override fun onSentRequestClickListener(post: Post, position: Int) {
         postMatched = post
+        postCount = postCount++
         sendRequestForDog(postMatched!!)
 
     }

@@ -83,6 +83,18 @@
     <string name="cancel">Cancel</string>
     <string name="write_message">Write A Message</string>
     <string name="chat">Chat</string>
+    <string name="send">Send</string>
+    <string name="deleteDog">Delete Dog</string>
+    <string name="deletingADog">Deleting A Dog?</string>
+    <string name="update">Update</string>
+    <string name="sickness">Sickness</string>
+    <string name="died">Died</string>
+    <string name="otherReason">Other reason</string>
+    <string name="adopted">Adopted</string>
+    <string name="letUsKnowReason">Please let us know the reason, your response is appreciated.</string>
+    <string name="selectReasons">Please select the reasons:</string>
+    <string name="pleaseEnterPassword">Please enter password to update.</string>
+    <string name="emailMessage">A email will be send to your registered email for password reset.</string>
     <string name="update_post">Update Post</string>
     <string name="delete">Delete</string>
     <string name="no_user_found">No User Found</string>
@@ -90,8 +102,21 @@
     <string name="pending">Pending</string>
     <string name="approved">Approved</string>
     <string name="type">Type</string>
-    <string name="message_not_approved">Your Profile needs to be approved by an administrator. You will receive an email as soon as your profile is approved.</string>
+    <string name="services">Services</string>
+    <string name="blog">Blog</string>
+    <string name="shop">Shop</string>
+    <string name="liabilityInsurance">Liability insurance</string>
+    <string name="surgicalProtection">Shop</string>
+    <string name="toPetlyShop">To the Petly Shop</string>
+    <string name="healthInsurance">Health insurance</string>
+    <string name="insurance">Insurance</string>
+    <string name="petlyCommunity">Petly Community</string>
+    <string name="knowledgeBase">Knowledge base</string>
+    <string name="forgotPassword">Forgot password?</string>
 
+    <string name="message_not_approved">Your Profile needs to be approved by an administrator. You will receive an email as soon as your profile is approved.</string>
+    <string name="updatePassword">Update Password</string>
+    <string name="passwordUpdatedSuccessfully">Password updated successfully</string>
 
     <string-array name="states_germany">
         <item>Baden-Württemberg</item>

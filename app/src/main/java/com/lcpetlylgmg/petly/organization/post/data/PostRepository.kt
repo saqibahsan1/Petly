@@ -1,6 +1,7 @@
 package com.lcpetlylgmg.petly.organization.post.data
 
 import com.google.firebase.firestore.FirebaseFirestore
+import com.lcpetlylgmg.petly.organization.data.Feedback
 import com.lcpetlylgmg.petly.utils.GlobalKeys
 
 class PostRepository {
@@ -16,6 +17,18 @@ class PostRepository {
                     onComplete(true, null)
                 } else {
                     onComplete(false, task.exception?.message ?: "Error saving post.")
+                }
+            }
+    }
+    fun sendFeedBack(feedback: Feedback, onComplete: (Boolean, String?) -> Unit) {
+        val collectionRef = firestore.collection(GlobalKeys.FEEDBACK_TABLE)
+
+        collectionRef.document(feedback.feedbackId.toString()).set(feedback)
+            .addOnCompleteListener { task ->
+                if (task.isSuccessful) {
+                    onComplete(true, null)
+                } else {
+                    onComplete(false, task.exception?.message ?: "Error saving feednack.")
                 }
             }
     }

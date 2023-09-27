@@ -242,8 +242,8 @@ class NewPostActivity : AppCompatActivity(), AdapterView.OnItemSelectedListener,
                 postedBy,
                 postedByName,
                 about,
-                postedDate,
-                selectedStates
+                postedDate = postedDate,
+                state = selectedStates
             )
             postViewModel.savePost(post) { success, errorMessage ->
                 if (success) {
