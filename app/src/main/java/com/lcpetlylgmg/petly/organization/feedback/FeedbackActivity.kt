@@ -92,19 +92,22 @@ class FeedbackActivity : AppCompatActivity() {
                 dialog.dismiss()
                 finish()
             }.show()
-
     }
+
+
+
 }
 
 enum class FeedbackValue(val intValue: Int, val slug: String) {
     NONE(100, ""),
-    ADOPTED(0, "Adopted"),
-    SICKNESS(1, "Sickness"),
-    DIED(2, "Died"),
-    Other(2, "Other reason");
+    ADOPTED(0, "About Petly"),
+    SICKNESS(1, "About social media"),
+    DIED(2, "Died \uD83D\uDE22(Good journey over the rainbow bridge)"),
+    Other(2, "Offline");
 
     companion object {
         operator fun get(reason: String): FeedbackValue =
             values().find { it.slug == reason } ?: NONE
     }
+
 }

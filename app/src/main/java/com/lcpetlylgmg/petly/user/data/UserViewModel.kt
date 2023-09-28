@@ -41,7 +41,7 @@ class UserViewModel(private val userRepository: UserRepository) : ViewModel() {
     fun getUserData(userId: String, onComplete: (User?, String?) -> Unit) {
         userRepository.getUserData(userId, onComplete)
     }
-    suspend fun getProductsData(onComplete: (List<Post>?, String?) -> Unit) {
+    fun getProductsData(onComplete: (List<Post>?, String?) -> Unit) {
         userRepository.getProducts(onComplete)
     }
 

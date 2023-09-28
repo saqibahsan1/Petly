@@ -6,7 +6,6 @@ import com.google.firebase.firestore.FirebaseFirestore
 import com.google.firebase.firestore.Query
 import com.lcpetlylgmg.petly.organization.post.data.Post
 import com.lcpetlylgmg.petly.utils.GlobalKeys
-import kotlinx.coroutines.tasks.await
 
 class UserRepository {
 
@@ -73,18 +72,19 @@ class UserRepository {
             }
     }
 
-    suspend fun getProducts(onComplete: (List<Post>?, String?) -> Unit) {
+    fun getProducts(onComplete: (List<Post>?, String?) -> Unit) {
         val postList = mutableListOf<Post>()
         val collectionRef = firestore.collection(GlobalKeys.PRODUCT_TABLE)
         val query: Query = collectionRef
-        val querySnapshot = query.get().await()
-        for (document in querySnapshot.documents) {
-            val post = document.toObject(Post::class.java)
-            if (post != null) {
-                postList.add(post)
+        query.get().addOnSuccessListener { querySnapshot ->
+            for (document in querySnapshot.documents) {
+                val post = document.toObject(Post::class.java)
+                if (post != null) {
+                    postList.add(post.copy(isBlog = document.data?.get("isBlog").toString()))
+                }
             }
+            onComplete(postList, "Data Found")
         }
-        onComplete(postList, "Data Found")
     }
 
     fun saveFCMTokenForUser(

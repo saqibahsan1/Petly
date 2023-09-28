@@ -33,7 +33,7 @@ class MatchAdapter(
             position: Int
         )
 
-        fun onCancelClickListener()
+        fun onCancelClickListener(post: Post)
     }
 
 
@@ -46,10 +46,17 @@ class MatchAdapter(
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
         val post = arraylist[position]
         if (post != null) {
-            holder.nameAge.text = "${post.dogName}" + " " + "${post.age}"
-            val states = post.state?.joinToString(", ")
+            if (post.link.isNullOrEmpty()) {
+                holder.nameAge.text = "${post.dogName}" + " " + "${post.age}"
+                val states = post.state?.joinToString(", ")
+                holder.city.text = "$states" + " " + "${post.city}"
+            }else{
+                if (post.isBlog?.lowercase() == "ja")
+                    holder.nameAge.text = "${post.productName}" + " " + "${post.price}"
+                else
+                    holder.nameAge.text = "${post.productName}"
+            }
 
-            holder.city.text = "$states" + " " + "${post.city}"
             Glide.with(holder.image)
                 .load(post.imageUrl)
                 .into(holder.image)
@@ -63,7 +70,7 @@ class MatchAdapter(
             }
             holder.cancelButton.setOnClickListener {
                 removeItem(position)
-                clickListener.onCancelClickListener()
+                clickListener.onCancelClickListener(post)
             }
         }
     }

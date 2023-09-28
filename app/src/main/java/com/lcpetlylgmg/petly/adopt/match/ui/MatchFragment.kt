@@ -23,6 +23,8 @@ import com.lcpetlylgmg.petly.common.requests.data.Request
 import com.lcpetlylgmg.petly.common.requests.data.RequestRepository
 import com.lcpetlylgmg.petly.common.requests.data.RequestViewModel
 import com.lcpetlylgmg.petly.common.requests.data.RequestViewModelFactory
+import com.lcpetlylgmg.petly.common.service.data.WebViewParams
+import com.lcpetlylgmg.petly.common.service.ui.WebViewActivity
 import com.lcpetlylgmg.petly.databinding.FragmentMatchBinding
 import com.lcpetlylgmg.petly.organization.post.data.Post
 import com.lcpetlylgmg.petly.prefs.PreferenceHelper
@@ -43,6 +45,7 @@ class MatchFragment : Fragment(), MatchAdapter.OnItemClickListener {
     private lateinit var userViewModel: UserViewModel
 
     private var cachedPostList = mutableListOf<Post>()// Cached data
+    private var cachedProductList = mutableListOf<Post>()// Cached data
 
 
     // This property is only valid between onCreateView and
@@ -185,6 +188,7 @@ class MatchFragment : Fragment(), MatchAdapter.OnItemClickListener {
 
     @SuppressLint("SetTextI18n")
     private fun performSearch(match: Match, string: String) {
+        postCount = 0
         userViewModel.getUserData(user.userId!!) { userData, errorMessage ->
             if (userData != null) {
                 binding.laoder.visibility = View.GONE
@@ -265,39 +269,81 @@ class MatchFragment : Fragment(), MatchAdapter.OnItemClickListener {
 
 
     override fun onImageClickListener(post: Post) {
-        Toast.makeText(context, "post" + post.postId, Toast.LENGTH_SHORT).show()
-        val intent = Intent(requireContext(), MatchDetailsActivity::class.java)
-        intent.putExtra(GlobalKeys.POST, post)
-        startActivity(intent)
+        if (post.link.isNullOrEmpty()) {
+            Toast.makeText(context, "post" + post.postId, Toast.LENGTH_SHORT).show()
+            val intent = Intent(requireContext(), MatchDetailsActivity::class.java)
+            intent.putExtra(GlobalKeys.POST, post)
+            startActivity(intent)
+        } else
+            navigateToWebView(post)
+
     }
 
     private var postCount = 0
     private var products = 0
 
-    private suspend fun getMarketingProducts(){
-        userViewModel.getProductsData { success, errorMessage1 ->
-            if (success?.size!! > 0) {
-                initRecyclerView(success)
-            } else {
-                binding.laoder.visibility = View.GONE
-                showAlertDialog(
-                    requireContext(),
-                    getString(R.string.request_message_failed) + " " + errorMessage1,
-                    false
-                )
+    private fun getMarketingProducts(productCount: Int) {
+        userViewModel.getProductsData { productList, _ ->
+            cachedProductList.clear()
+            if (productList?.size!! > 0) {
+                if (productCount == productList.size) {
+                    cachedProductList.add(productList[0])
+                    products = 0
+                } else
+                    cachedProductList.add(productList[productCount])
+
+                initRecyclerView(cachedProductList)
             }
         }
-
     }
 
     override fun onSentRequestClickListener(post: Post, position: Int) {
+        loadProduct(post)
+    }
+
+    override fun onResume() {
+        super.onResume()
+        if (::selectedModel.isInitialized)
+            performSearch(selectedModel, "Egal")
+    }
+
+    private fun loadProduct(post: Post) {
         postMatched = post
-        postCount = postCount++
-        sendRequestForDog(postMatched!!)
+        if (postCount >= 2) {
+            getMarketingProducts(products)
+            postCount = 0
+        } else {
+            if (!post.link.isNullOrEmpty()) {
+                navigateToWebView(post)
+            } else
+                postCount = postCount.inc()
+        }
+        if (post.link.isNullOrEmpty()) {
+            sendRequestForDog(post)
+        } else
+            products = products.inc()
 
     }
 
-    override fun onCancelClickListener() {
+    private fun navigateToWebView(post: Post) {
+        val intent = Intent(requireContext(), WebViewActivity::class.java)
+        intent.putExtra(
+            GlobalKeys.WEB_DATA,
+            WebViewParams(name = post.productName, link = post.link)
+        )
+        requireContext().startActivity(intent)
+    }
 
+    override fun onCancelClickListener(post: Post) {
+        if (post.link.isNullOrEmpty()) {
+            postCount = postCount.inc()
+            if (postCount > 2) {
+                getMarketingProducts(products)
+                postCount = 0
+            }
+        } else {
+            products = products.inc()
+            performSearch(selectedModel, "Egal")
+        }
     }
 }

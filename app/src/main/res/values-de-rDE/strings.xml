@@ -69,14 +69,14 @@
     <string name="emailMessage">Eine E-Mail zum Zurücksetzen des Passworts wird an Ihre registrierte E-Mail-Adresse gesendet.</string>
     <string name="my_request">Liste</string>
     <string name="update">aktualisieren</string>
-    <string name="adopted">Angenommen</string>
-    <string name="died">Sinkigkeit</string>
-    <string name="otherReason">Anderer Grund</string>
-    <string name="sickness">Sinkigkeit</string>
+    <string name="adopted">Über Petly</string>
+    <string name="died">"Verstorben 😢(Gute Reise über die Regenbogenbrücke)</string>
+    <string name="otherReason">Offline</string>
+    <string name="sickness">Über Social Media</string>
     <string name="selectReasons">Bitte wählen Sie die Gründe aus:</string>
-    <string name="letUsKnowReason">Bitte teilen Sie uns den Grund mit, wir freuen uns über Ihre Antwort.</string>
+    <string name="letUsKnowReason">🎉 Juhu, super dass eure Fellnase ein Zuhause gefunden hat. Lasst uns wissen wie.</string>
     <string name="deleteDog">Delete Dog</string>
-    <string name="deletingADog">Einen Hund löschen?</string>
+    <string name="deletingADog">Dieses Tier löschen?</string>
     <string name="forgotPassword">Passwort vergessen?</string>
     <string name="no_post_found">Keine Hunde vorhanden</string>
     <string name="you_have_experience">Du hast Erfahrung mit Hunden?</string>
@@ -110,12 +110,12 @@
     <string name="blog">Blog</string>
     <string name="shop">Shop</string>
     <string name="toPetlyShop">Zum Petly Shop</string>
-    <string name="healthInsurance">Kranken versicherung</string>
+    <string name="healthInsurance">Krankenversicherung</string>
     <string name="insurance">Versicherungen</string>
     <string name="petlyCommunity">Petly Community</string>
     <string name="knowledgeBase">Wissensdatenbank</string>
     <string name="message_not_approved">Ihr Profil muss noch vom Administrator genehmigt werden. Sie erhalten eine E-Mail, sobald das Profil genehmigt wurde.</string>
-    <string name="updatePassword">Kennwort aktualisieren</string>
+    <string name="updatePassword">Passwort aktualisieren</string>
 
     <string-array name="states_germany">
         <item>Baden-Württemberg</item>

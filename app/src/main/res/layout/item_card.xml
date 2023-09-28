@@ -15,6 +15,7 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:layout_marginTop="8dp"
+        android:layout_marginBottom="30dp"
         android:orientation="vertical"
         android:weightSum="2">
 
@@ -22,11 +23,10 @@
             android:id="@+id/image"
             android:layout_width="match_parent"
             android:layout_height="0dp"
-            android:layout_weight="1.5"
+            android:layout_weight="1.4"
             android:paddingHorizontal="16dp"
             android:scaleType="fitXY"
-            android:src="@drawable/ic_launcher_background"
-            app:shapeAppearanceOverlay="@style/ShapeAppearance.Material3.Corner.Large" />
+            app:shapeAppearanceOverlay="@style/ShapeAppearance.Material3.Corner.Medium" />
 
         <RelativeLayout
             android:layout_width="match_parent"
@@ -75,7 +75,6 @@
                 android:layout_toStartOf="@+id/sendRequest"
                 android:layout_toEndOf="@+id/cancelRequest"
                 android:fontFamily="@font/poppins_regular"
-                android:text="@string/set_characteristics"
                 android:textColor="@color/primary" />
         </RelativeLayout>
 
