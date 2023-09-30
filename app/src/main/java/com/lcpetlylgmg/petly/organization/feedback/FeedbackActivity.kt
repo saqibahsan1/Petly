@@ -81,7 +81,12 @@ class FeedbackActivity : AppCompatActivity() {
                     this@FeedbackActivity,
                     getString(R.string.post_message_delete), "Deleted"
                 )
-            }
+            }else
+                showAlertDialog(
+                    this@FeedbackActivity,
+                    getString(R.string.post_message_delete), "Deleted"
+                )
+
         }
 
     }

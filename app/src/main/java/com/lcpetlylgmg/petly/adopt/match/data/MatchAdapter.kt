@@ -51,7 +51,7 @@ class MatchAdapter(
                 val states = post.state?.joinToString(", ")
                 holder.city.text = "$states" + " " + "${post.city}"
             }else{
-                if (post.isBlog?.lowercase() == "ja")
+                if (post.isBlog?.lowercase() == "nein")
                     holder.nameAge.text = "${post.productName}" + " " + "${post.price}"
                 else
                     holder.nameAge.text = "${post.productName}"

@@ -104,6 +104,7 @@ class ProfileFragment : Fragment() {
                 val user = FirebaseAuth.getInstance().currentUser
                 user?.updatePassword(body.text.toString())
                     ?.addOnCompleteListener { task ->
+                        dialog.dismiss()
                         if (task.isSuccessful) {
                             showAlertDialog(requireContext(), this.getString(R.string.passwordUpdatedSuccessfully), "")
                         } else

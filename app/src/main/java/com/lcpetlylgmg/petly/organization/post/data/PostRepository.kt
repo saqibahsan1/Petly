@@ -2,16 +2,16 @@ package com.lcpetlylgmg.petly.organization.post.data
 
 import com.google.firebase.firestore.FirebaseFirestore
 import com.lcpetlylgmg.petly.organization.data.Feedback
+import com.lcpetlylgmg.petly.utils.Global
 import com.lcpetlylgmg.petly.utils.GlobalKeys
 
 class PostRepository {
 
     private val firestore = FirebaseFirestore.getInstance()
 
-    fun savePost(post: Post, onComplete: (Boolean, String?) -> Unit) {
+    fun savePost(post: Posting, onComplete: (Boolean, String?) -> Unit) {
         val collectionRef = firestore.collection(GlobalKeys.POST_TABLE)
-
-        collectionRef.document(post.postId.toString()).set(post)
+        collectionRef.document(post.postId!!).set(post)
             .addOnCompleteListener { task ->
                 if (task.isSuccessful) {
                     onComplete(true, null)
@@ -33,7 +33,7 @@ class PostRepository {
             }
     }
 
-    fun updatePost(post: Post, onComplete: (Boolean, String?) -> Unit) {
+    fun updatePost(post: Posting, onComplete: (Boolean, String?) -> Unit) {
         val collectionRef = firestore.collection(GlobalKeys.POST_TABLE)
 
         // Assuming that post.postId is the document ID of the post you want to update

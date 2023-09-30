@@ -78,6 +78,7 @@
     <string name="post_message_success">Post Saved Successfully</string>
     <string name="post_message_delete">Post Deleted Successfully</string>
     <string name="post_message_failed">Post Failed!</string>
+    <string name="error_deleting">Error Deleting the post</string>
     <string name="match_characteristics">Match Characteristics</string>
     <string name="title_match">Match</string>
     <string name="cancel">Cancel</string>
@@ -106,7 +107,7 @@
     <string name="blog">Blog</string>
     <string name="shop">Shop</string>
     <string name="liabilityInsurance">Liability insurance</string>
-    <string name="surgicalProtection">Shop</string>
+    <string name="surgicalProtection">Surgical protection</string>
     <string name="toPetlyShop">To the Petly Shop</string>
     <string name="healthInsurance">Health insurance</string>
     <string name="insurance">Insurance</string>

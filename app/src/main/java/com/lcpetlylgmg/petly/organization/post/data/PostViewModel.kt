@@ -17,14 +17,14 @@ class PostViewModel(private val postRepository: PostRepository) : ViewModel() {
     private val _userPostsLiveDataMessage = MutableLiveData<String>()
     val userPostsLiveDataMessage: LiveData<String> = _userPostsLiveDataMessage
 
-    fun savePost(post: Post, onComplete: (Boolean, String?) -> Unit) {
+    fun savePost(post: Posting, onComplete: (Boolean, String?) -> Unit) {
         postRepository.savePost(post, onComplete)
     }
     fun sendFeedBack(feedback: Feedback, onComplete: (Boolean, String?) -> Unit) {
         postRepository.sendFeedBack(feedback, onComplete)
     }
 
-    fun updatePost(post: Post, onComplete: (Boolean, String?) -> Unit) {
+    fun updatePost(post: Posting, onComplete: (Boolean, String?) -> Unit) {
         postRepository.updatePost(post, onComplete)
     }
 
@@ -83,7 +83,8 @@ class PostViewModel(private val postRepository: PostRepository) : ViewModel() {
                                 Log.e("TAG", "Error deleting document: $e")
                             }
                     }
-                }
+                }else
+                    onComplete(false)
             }
             .addOnFailureListener { e ->
                 // Handle errors while fetching the Firestore document

@@ -29,6 +29,7 @@ import com.lcpetlylgmg.petly.organization.post.data.Post
 import com.lcpetlylgmg.petly.organization.post.data.PostRepository
 import com.lcpetlylgmg.petly.organization.post.data.PostViewModel
 import com.lcpetlylgmg.petly.organization.post.data.PostViewModelFactory
+import com.lcpetlylgmg.petly.organization.post.data.Posting
 import com.lcpetlylgmg.petly.prefs.PreferenceHelper
 import com.lcpetlylgmg.petly.utils.Global
 import com.lcpetlylgmg.petly.utils.Global.getImageUri
@@ -224,7 +225,7 @@ class NewPostActivity : AppCompatActivity(), AdapterView.OnItemSelectedListener,
 
 
         if (imageUrl != "") {
-            val post = Post(
+            val post = Posting(
                 age,
                 ageRange,
                 breed,

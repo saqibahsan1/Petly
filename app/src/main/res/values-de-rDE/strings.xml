@@ -107,6 +107,7 @@
     <string name="type">Type</string>
     <string name="liabilityInsurance">Haftpflicht versicherung</string>
     <string name="surgicalProtection">OP-Schutz</string>
+    <string name="error_deleting">Error Deleting the post</string>
     <string name="blog">Blog</string>
     <string name="shop">Shop</string>
     <string name="toPetlyShop">Zum Petly Shop</string>
